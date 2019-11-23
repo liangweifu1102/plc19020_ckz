@@ -1,0 +1,1490 @@
+###############################################################################
+#
+# IAR ELF Linker V8.32.3.193/W32 for ARM                  23/Nov/2019  14:01:41
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =  F:\www\plc19020_ckz\Debug\Exe\ckz_gcode.out
+#    Map file     =  F:\www\plc19020_ckz\Debug\List\ckz_gcode.map
+#    Command line =  
+#        -f C:\Users\fulong\AppData\Local\Temp\EWCB60.tmp
+#        (F:\www\plc19020_ckz\Debug\Obj\Action.o
+#        F:\www\plc19020_ckz\Debug\Obj\Alarm.o
+#        F:\www\plc19020_ckz\Debug\Obj\anglogbus.o
+#        F:\www\plc19020_ckz\Debug\Obj\AutoRun.o
+#        F:\www\plc19020_ckz\Debug\Obj\delay.o
+#        F:\www\plc19020_ckz\Debug\Obj\diskio.o
+#        F:\www\plc19020_ckz\Debug\Obj\Encode.o
+#        F:\www\plc19020_ckz\Debug\Obj\fatfs.o
+#        F:\www\plc19020_ckz\Debug\Obj\ff.o
+#        F:\www\plc19020_ckz\Debug\Obj\ff_gen_drv.o
+#        F:\www\plc19020_ckz\Debug\Obj\Gcode.o
+#        F:\www\plc19020_ckz\Debug\Obj\iicbus.o
+#        F:\www\plc19020_ckz\Debug\Obj\inout.o
+#        F:\www\plc19020_ckz\Debug\Obj\led.o
+#        F:\www\plc19020_ckz\Debug\Obj\main.o
+#        F:\www\plc19020_ckz\Debug\Obj\Manual.o
+#        F:\www\plc19020_ckz\Debug\Obj\ModbusSlave.o
+#        F:\www\plc19020_ckz\Debug\Obj\pwm.o
+#        F:\www\plc19020_ckz\Debug\Obj\serialbus.o
+#        F:\www\plc19020_ckz\Debug\Obj\ServoStep.o
+#        F:\www\plc19020_ckz\Debug\Obj\spibus.o
+#        F:\www\plc19020_ckz\Debug\Obj\startup_stm32f407xx.o
+#        F:\www\plc19020_ckz\Debug\Obj\stm32f4xx_hal.o
+#        F:\www\plc19020_ckz\Debug\Obj\stm32f4xx_hal_cortex.o
+#        F:\www\plc19020_ckz\Debug\Obj\stm32f4xx_hal_flash.o
+#        F:\www\plc19020_ckz\Debug\Obj\stm32f4xx_hal_gpio.o
+#        F:\www\plc19020_ckz\Debug\Obj\stm32f4xx_hal_hcd.o
+#        F:\www\plc19020_ckz\Debug\Obj\stm32f4xx_it.o
+#        F:\www\plc19020_ckz\Debug\Obj\stm32f4xx_ll_usb.o
+#        F:\www\plc19020_ckz\Debug\Obj\stmflash.o
+#        F:\www\plc19020_ckz\Debug\Obj\sys.o
+#        F:\www\plc19020_ckz\Debug\Obj\syscall.o
+#        F:\www\plc19020_ckz\Debug\Obj\timer.o
+#        F:\www\plc19020_ckz\Debug\Obj\Touch.o
+#        F:\www\plc19020_ckz\Debug\Obj\unicode.o
+#        F:\www\plc19020_ckz\Debug\Obj\usb_host.o
+#        F:\www\plc19020_ckz\Debug\Obj\usbh_conf.o
+#        F:\www\plc19020_ckz\Debug\Obj\usbh_core.o
+#        F:\www\plc19020_ckz\Debug\Obj\usbh_ctlreq.o
+#        F:\www\plc19020_ckz\Debug\Obj\usbh_diskio.o
+#        F:\www\plc19020_ckz\Debug\Obj\usbh_hid.o
+#        F:\www\plc19020_ckz\Debug\Obj\usbh_hid_keybd.o
+#        F:\www\plc19020_ckz\Debug\Obj\usbh_hid_mouse.o
+#        F:\www\plc19020_ckz\Debug\Obj\usbh_hid_parser.o
+#        F:\www\plc19020_ckz\Debug\Obj\usbh_ioreq.o
+#        F:\www\plc19020_ckz\Debug\Obj\usbh_msc.o
+#        F:\www\plc19020_ckz\Debug\Obj\usbh_msc_bot.o
+#        F:\www\plc19020_ckz\Debug\Obj\usbh_msc_scsi.o
+#        F:\www\plc19020_ckz\Debug\Obj\usbh_pipes.o
+#        F:\www\plc19020_ckz\Debug\Obj\usermemory.o
+#        F:\www\plc19020_ckz\Debug\Obj\w25qxx.o --no_out_extension -o
+#        F:\www\plc19020_ckz\Debug\Exe\ckz_gcode.out --map
+#        F:\www\plc19020_ckz\Debug\List\ckz_gcode.map --config
+#        F:\www\plc19020_ckz\ckz_gcode_app.icf --semihosting --entry
+#        __iar_program_start --vfe --utf8_text_in --text_out utf8 --no_bom)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__Heap_Handler  = DLMalloc
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The advanced heap was selected because the application calls memory
+allocation functions outside of system library functions, and there
+are calls to deallocation functions in the application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x802'0000 { ro section .intvec };
+"P1":  place in [from 0x802'0000 to 0x80f'ffff] { ro };
+define block CSTACK with size = 8K, alignment = 8 { };
+"P3":  place in [from 0x1000'0000 to 0x1000'1fff] { block CSTACK };
+"P4":  place in [from 0x1000'2000 to 0x1000'ffff] { section .ccram };
+define block HEAP with size = 8K, alignment = 8 { };
+"P5":  place in [from 0x2000'0000 to 0x2001'bfff] |
+                [from 0x2001'c000 to 0x2001'ffff] { rw, block HEAP };
+initialize by copy { rw };
+
+No sections matched the following patterns:
+
+  ro section application_specific_ro  in "P2"
+  section .backup_sram                in "P6"
+
+
+  Section            Kind         Address     Size  Object
+  -------            ----         -------     ----  ------
+"A0":                                        0x188
+  .intvec            ro code   0x802'0000    0x188  startup_stm32f407xx.o [1]
+                             - 0x802'0188    0x188
+
+"P1":                                      0x16968
+  .text              ro code   0x802'0188   0x4c2c  AutoRun.o [1]
+  .text              ro code   0x802'4db4    0x25c  Action.o [1]
+  .text              ro code   0x802'5010    0xd00  ServoStep.o [1]
+  .text              ro code   0x802'5d10     0x66  ABImemset.o [4]
+  .text              ro code   0x802'5d76     0x3a  zero_init3.o [4]
+  .text              ro code   0x802'5db0    0xb3c  Gcode.o [1]
+  .text              ro code   0x802'68ec    0x2f0  Encode.o [1]
+  .text              ro code   0x802'6bdc    0x65c  usermemory.o [1]
+  .text              ro code   0x802'7238      0x6  ABImemclr4.o [4]
+  .text              ro code   0x802'7240     0x22  S32ToDbl.o [3]
+  .text              ro code   0x802'7264    0x1a2  DblMul.o [3]
+  .text              ro code   0x802'7408    0x17a  DblAdd.o [3]
+  .text              ro code   0x802'7584     0x3a  DblToS32.o [3]
+  .text              ro code   0x802'75c0    0x246  DblDiv.o [3]
+  .text              ro code   0x802'7808     0x1a  U32ToDbl.o [3]
+  .text              ro code   0x802'7824     0x20  DblCmpEq.o [3]
+  .text              ro code   0x802'7844   0x1428  Touch.o [1]
+  .text              ro code   0x802'8c6c    0xdf8  Manual.o [1]
+  .text              ro code   0x802'9a64    0xb60  Alarm.o [1]
+  .text              ro code   0x802'a5c4    0x3a8  pwm.o [1]
+  .text              ro code   0x802'a96c     0xa6  ABImemcpy.o [4]
+  .text              ro code   0x802'aa14     0x36  strlen.o [4]
+  .text              ro code   0x802'aa4c    0x5f4  usb_host.o [1]
+  .text              ro code   0x802'b040    0x388  sys.o [1]
+  .text              ro code   0x802'b3c8    0x3a0  iicbus.o [1]
+  .text              ro code   0x802'b768    0x3a0  w25qxx.o [1]
+  .text              ro code   0x802'bb08     0x32  ABImemset48.o [4]
+  .text              ro code   0x802'bb3c     0xe2  DblSub.o [3]
+  .text              ro code   0x802'bc20    0x814  usbh_core.o [1]
+  .text              ro code   0x802'c434   0x1040  ff.o [1]
+  .text              ro code   0x802'd474    0x54c  serialbus.o [1]
+  .text              ro code   0x802'd9c0    0x178  usbh_hid_keybd.o [1]
+  .text              ro code   0x802'db38    0x11c  spibus.o [1]
+  .text              ro code   0x802'dc54    0x4ba  usbh_conf.o [1]
+  .text              ro code   0x802'e10e     0xdc  usbh_pipes.o [1]
+  .text              ro code   0x802'e1ec    0x62c  usbh_ctlreq.o [1]
+  .text              ro code   0x802'e818     0x90  diskio.o [1]
+  .text              ro code   0x802'e8a8     0xa0  unicode.o [1]
+  .text              ro code   0x802'e948    0x606  usbh_hid.o [1]
+  .text              ro code   0x802'ef4e     0xca  usbh_hid_parser.o [1]
+  .text              ro code   0x802'f018    0x248  stm32f4xx_hal_gpio.o [1]
+  .text              ro code   0x802'f260     0xd4  stm32f4xx_hal_cortex.o [1]
+  .text              ro code   0x802'f334   0x11ca  stm32f4xx_hal_hcd.o [1]
+  .text              ro code   0x803'0500     0x8a  main.o [1]
+  .text              ro code   0x803'058c     0x88  delay.o [1]
+  .text              ro code   0x803'0614    0x140  usbh_ioreq.o [1]
+  .text              ro code   0x803'0754   0x14e0  dlmalloc.o [2]
+  .text              ro code   0x803'1c34      0x4  heaptramp0.o [2]
+  .text              ro code   0x803'1c38    0xa2c  stm32f4xx_ll_usb.o [1]
+  .text              ro code   0x803'2664     0xbc  timer.o [1]
+  .text              ro code   0x803'2720    0xba4  inout.o [1]
+  .text              ro code   0x803'32c4     0x2c  fatfs.o [1]
+  .text              ro code   0x803'32f0     0x50  led.o [1]
+  .text              ro code   0x803'3340    0x94c  ModbusSlave.o [1]
+  .text              ro code   0x803'3c8c      0x6  abort.o [2]
+  .text              ro code   0x803'3c94     0x2c  xgetmemchunk.o [2]
+  .text              ro code   0x803'3cc0     0x60  ff_gen_drv.o [1]
+  .text              ro code   0x803'3d20     0x14  exit.o [5]
+  .text              ro code   0x803'3d34    0xbca  usbh_msc.o [1]
+  .text              ro code   0x803'4900    0x43c  usbh_msc_bot.o [1]
+  .text              ro code   0x803'4d3c    0x488  usbh_msc_scsi.o [1]
+  .text              ro code   0x803'51c4    0x270  usbh_diskio.o [1]
+  .rodata            const     0x803'5434    0x1e0  unicode.o [1]
+  .rodata            const     0x803'5614    0x1e0  unicode.o [1]
+  .rodata            const     0x803'57f4    0x1c0  ServoStep.o [1]
+  .rodata            const     0x803'59b4    0x1a4  ServoStep.o [1]
+  .rodata            const     0x803'5b58    0x100  unicode.o [1]
+  .rodata            const     0x803'5c58     0xe8  usbh_hid_keybd.o [1]
+  .rodata            const     0x803'5d40     0x84  usbh_hid_keybd.o [1]
+  .rodata            const     0x803'5dc4     0x84  usbh_hid_keybd.o [1]
+  .rodata            const     0x803'5e48     0x80  ff.o [1]
+  .text              ro code   0x803'5ec8     0x2c  stm32f4xx_it.o [1]
+  .text              ro code   0x803'5ef4     0x2c  copy_init3.o [4]
+  .rodata            const     0x803'5f20     0x28  usbh_core.o [1]
+  .rodata            const     0x803'5f48     0x28  usbh_core.o [1]
+  .rodata            const     0x803'5f70     0x28  usbh_hid.o [1]
+  .rodata            const     0x803'5f98     0x28  usbh_msc.o [1]
+  .text              ro code   0x803'5fc0     0x28  data_init.o [4]
+  .rodata            const     0x803'5fe8     0x24  Gcode.o [1]
+  .rodata            const     0x803'600c     0x24  usbh_msc.o [1]
+  .text              ro code   0x803'6030     0x22  fpinit_M.o [3]
+  .iar.init_table    const     0x803'6054     0x2c  - Linker created -
+  .rodata            const     0x803'6080     0x20  usbh_core.o [1]
+  .rodata            const     0x803'60a0     0x20  usbh_core.o [1]
+  .rodata            const     0x803'60c0     0x20  usbh_core.o [1]
+  .rodata            const     0x803'60e0     0x20  usbh_core.o [1]
+  .rodata            const     0x803'6100     0x20  usbh_diskio.o [1]
+  .rodata            const     0x803'6120     0x20  usbh_hid_keybd.o [1]
+  .rodata            const     0x803'6140     0x20  usbh_hid_keybd.o [1]
+  .rodata            const     0x803'6160     0x20  usbh_hid_keybd.o [1]
+  .rodata            const     0x803'6180     0x20  usbh_hid_keybd.o [1]
+  .rodata            const     0x803'61a0     0x20  usbh_hid_keybd.o [1]
+  .rodata            const     0x803'61c0     0x20  usbh_hid_keybd.o [1]
+  .rodata            const     0x803'61e0     0x20  usbh_hid_keybd.o [1]
+  .rodata            const     0x803'6200     0x20  usbh_hid_keybd.o [1]
+  .rodata            const     0x803'6220     0x20  usbh_hid_keybd.o [1]
+  .rodata            const     0x803'6240     0x20  usbh_msc.o [1]
+  .rodata            const     0x803'6260     0x20  usbh_msc.o [1]
+  .text              ro code   0x803'6280     0x1e  cmain.o [4]
+  .text              ro code   0x803'629e      0x4  low_level_init.o [2]
+  .text              ro code   0x803'62a2      0x4  exit.o [2]
+  .text              ro code   0x803'62a8      0xa  cexit.o [4]
+  .rodata            const     0x803'62b4     0x1c  usbh_core.o [1]
+  .rodata            const     0x803'62d0     0x1c  usbh_core.o [1]
+  .rodata            const     0x803'62ec     0x1c  usbh_msc.o [1]
+  .rodata            const     0x803'6308     0x18  usb_host.o [1]
+  .rodata            const     0x803'6320     0x18  usb_host.o [1]
+  .rodata            const     0x803'6338     0x18  usb_host.o [1]
+  .rodata            const     0x803'6350     0x18  usbh_core.o [1]
+  .rodata            const     0x803'6368     0x18  usbh_core.o [1]
+  .rodata            const     0x803'6380     0x18  usbh_core.o [1]
+  .rodata            const     0x803'6398     0x18  usbh_core.o [1]
+  .rodata            const     0x803'63b0     0x18  usbh_diskio.o [1]
+  .rodata            const     0x803'63c8     0x18  usbh_hid.o [1]
+  .rodata            const     0x803'63e0     0x18  usbh_hid.o [1]
+  .rodata            const     0x803'63f8     0x18  usbh_msc.o [1]
+  .rodata            const     0x803'6410     0x18  usbh_msc.o [1]
+  .rodata            const     0x803'6428     0x18  usbh_msc.o [1]
+  .rodata            const     0x803'6440     0x18  usbh_msc.o [1]
+  .rodata            const     0x803'6458     0x14  usb_host.o [1]
+  .rodata            const     0x803'646c     0x14  usb_host.o [1]
+  .rodata            const     0x803'6480     0x14  usb_host.o [1]
+  .rodata            const     0x803'6494     0x14  usb_host.o [1]
+  .rodata            const     0x803'64a8     0x14  usb_host.o [1]
+  .rodata            const     0x803'64bc     0x14  usb_host.o [1]
+  .rodata            const     0x803'64d0     0x14  usbh_core.o [1]
+  .rodata            const     0x803'64e4     0x14  usbh_core.o [1]
+  .rodata            const     0x803'64f8     0x14  usbh_core.o [1]
+  .rodata            const     0x803'650c     0x14  usbh_core.o [1]
+  .rodata            const     0x803'6520     0x14  usbh_core.o [1]
+  .rodata            const     0x803'6534     0x14  usbh_core.o [1]
+  .rodata            const     0x803'6548     0x14  usbh_core.o [1]
+  .rodata            const     0x803'655c     0x14  usbh_core.o [1]
+  .rodata            const     0x803'6570     0x14  usbh_diskio.o [1]
+  .rodata            const     0x803'6584     0x14  usbh_hid.o [1]
+  .rodata            const     0x803'6598     0x14  usbh_msc.o [1]
+  .rodata            const     0x803'65ac     0x14  usbh_msc.o [1]
+  .rodata            const     0x803'65c0     0x14  usbh_msc.o [1]
+  .rodata            const     0x803'65d4     0x14  w25qxx.o [1]
+  .rodata            const     0x803'65e8     0x10  fatfs.o [1]
+  .rodata            const     0x803'65f8     0x10  ff.o [1]
+  .rodata            const     0x803'6608     0x10  ModbusSlave.o [1]
+  .rodata            const     0x803'6618     0x10  usb_host.o [1]
+  .rodata            const     0x803'6628     0x10  usb_host.o [1]
+  .rodata            const     0x803'6638     0x10  usb_host.o [1]
+  .rodata            const     0x803'6648     0x10  usbh_core.o [1]
+  .rodata            const     0x803'6658     0x10  usbh_core.o [1]
+  .rodata            const     0x803'6668     0x10  usbh_core.o [1]
+  .rodata            const     0x803'6678     0x10  usbh_core.o [1]
+  .rodata            const     0x803'6688     0x10  usbh_core.o [1]
+  .rodata            const     0x803'6698     0x10  usbh_ctlreq.o [1]
+  .rodata            const     0x803'66a8     0x10  usbh_msc.o [1]
+  .rodata            const     0x803'66b8      0xc  ff.o [1]
+  .rodata            const     0x803'66c4      0xc  main.o [1]
+  .rodata            const     0x803'66d0      0xc  usb_host.o [1]
+  .rodata            const     0x803'66dc      0xc  usb_host.o [1]
+  .rodata            const     0x803'66e8      0xc  usb_host.o [1]
+  .rodata            const     0x803'66f4      0xc  usbh_core.o [1]
+  .rodata            const     0x803'6700      0xc  usbh_core.o [1]
+  .rodata            const     0x803'670c      0xc  usbh_hid.o [1]
+  .rodata            const     0x803'6718      0xc  usbh_msc.o [1]
+  .rodata            const     0x803'6724      0xc  usbh_msc.o [1]
+  .text              ro code   0x803'6730      0xc  cstartup_M.o [4]
+  .rodata            const     0x803'673c      0x8  ff.o [1]
+  .rodata            const     0x803'6744      0x8  usbh_core.o [1]
+  .rodata            const     0x803'674c      0x8  usbh_ctlreq.o [1]
+  .rodata            const     0x803'6754      0x8  usbh_diskio.o [1]
+  .text              ro code   0x803'675c      0x8  startup_stm32f407xx.o [1]
+  .rodata            const     0x803'6764      0x4  usbh_hid.o [1]
+  .rodata            const     0x803'6768      0x4  usbh_msc.o [1]
+  .text              ro code   0x803'676c      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6770      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6774      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6778      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'677c      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6780      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6784      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6788      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'678c      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6790      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6794      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6798      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'679c      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67a0      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67a4      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67a8      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67ac      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67b0      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67b4      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67b8      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67bc      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67c0      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67c4      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67c8      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67cc      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67d0      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67d4      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67d8      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67dc      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67e0      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67e4      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67e8      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67ec      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67f0      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67f4      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67f8      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'67fc      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6800      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6804      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6808      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'680c      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6810      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6814      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6818      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'681c      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6820      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6824      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6828      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'682c      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6830      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6834      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6838      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'683c      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6840      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6844      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6848      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'684c      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6850      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6854      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6858      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'685c      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6860      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6864      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6868      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'686c      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6870      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6874      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6878      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'687c      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6880      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6884      0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x803'6888      0x4  startup_stm32f407xx.o [1]
+  .rodata            const     0x803'688c      0x0  zero_init3.o [4]
+  .rodata            const     0x803'688c      0x0  copy_init3.o [4]
+  Initializer bytes  const     0x803'688c    0x264  <for P5 s0>
+                             - 0x803'6af0  0x16968
+
+"P3":                                       0x2000
+  CSTACK                      0x1000'0000   0x2000  <Block>
+    CSTACK           uninit   0x1000'0000   0x2000  <Block tail>
+                            - 0x1000'2000   0x2000
+
+"P4":                                       0x2650
+  .ccram             zero     0x1000'2000   0x2000  usermemory.o [1]
+  .ccram             zero     0x1000'4000    0x12c  ServoStep.o [1]
+  .ccram             zero     0x1000'412c    0x12c  ServoStep.o [1]
+  .ccram             zero     0x1000'4258    0x12c  ServoStep.o [1]
+  .ccram             zero     0x1000'4384    0x12c  ServoStep.o [1]
+  .ccram             zero     0x1000'44b0     0x80  usermemory.o [1]
+  .ccram             zero     0x1000'4530     0x48  Alarm.o [1]
+  .ccram             zero     0x1000'4578     0x34  ServoStep.o [1]
+  .ccram             zero     0x1000'45ac     0x34  ServoStep.o [1]
+  .ccram             zero     0x1000'45e0     0x34  ServoStep.o [1]
+  .ccram             zero     0x1000'4614     0x34  ServoStep.o [1]
+  .ccram             zero     0x1000'4648      0x4  Encode.o [1]
+  .ccram             zero     0x1000'464c      0x2  ServoStep.o [1]
+  .ccram             zero     0x1000'464e      0x2  ServoStep.o [1]
+                            - 0x1000'4650   0x2650
+
+"P5", part 1 of 3:                           0x264
+  P5 s0                       0x2000'0000    0x264  <Init block>
+    .data            inited   0x2000'0000    0x100  ModbusSlave.o [1]
+    .data            inited   0x2000'0100    0x100  ModbusSlave.o [1]
+    .data            inited   0x2000'0200     0x20  usbh_hid.o [1]
+    .data            inited   0x2000'0220     0x20  usbh_msc.o [1]
+    .data            inited   0x2000'0240     0x10  ServoStep.o [1]
+    .data            inited   0x2000'0250      0x4  delay.o [1]
+    .data            inited   0x2000'0254      0x4  ModbusSlave.o [1]
+    .data            inited   0x2000'0258      0x4  sys.o [1]
+    .data            inited   0x2000'025c      0x4  usb_host.o [1]
+    .data            inited   0x2000'0260      0x1  Encode.o [1]
+    ccram            inited   0x2000'0261      0x1  Encode.o [1]
+                            - 0x2000'0264    0x264
+
+"P5", part 2 of 3:                          0x8b00
+  .bss               zero     0x2000'0264   0x40c8  usb_host.o [1]
+  .bss               zero     0x2000'432c   0x1000  usermemory.o [1]
+  .bss               zero     0x2000'532c   0x1000  w25qxx.o [1]
+  .bss               zero     0x2000'632c    0x400  ModbusSlave.o [1]
+  .bss               zero     0x2000'672c    0x400  ModbusSlave.o [1]
+  .bss               zero     0x2000'6b2c    0x3cc  usb_host.o [1]
+  .bss               zero     0x2000'6ef8    0x3cc  usb_host.o [1]
+  .bss               zero     0x2000'72c4    0x298  usbh_conf.o [1]
+  .bss               zero     0x2000'755c    0x298  usbh_conf.o [1]
+  .bss               zero     0x2000'77f4    0x228  usb_host.o [1]
+  .bss               zero     0x2000'7a1c    0x220  usb_host.o [1]
+  .bss               zero     0x2000'7c3c    0x200  usbh_diskio.o [1]
+  .bss               zero     0x2000'7e3c    0x200  usermemory.o [1]
+  .bss               zero     0x2000'803c    0x1d8  dlmalloc.o [2]
+  .bss               zero     0x2000'8214    0x190  AutoRun.o [1]
+  .bss               zero     0x2000'83a4    0x190  AutoRun.o [1]
+  .bss               zero     0x2000'8534    0x190  AutoRun.o [1]
+  .bss               zero     0x2000'86c4    0x190  AutoRun.o [1]
+  .bss               zero     0x2000'8854     0x78  AutoRun.o [1]
+  .bss               zero     0x2000'88cc     0x78  AutoRun.o [1]
+  .bss               zero     0x2000'8944     0x78  AutoRun.o [1]
+  .bss               zero     0x2000'89bc     0x64  Gcode.o [1]
+  .bss               zero     0x2000'8a20     0x64  inout.o [1]
+  .bss               zero     0x2000'8a84     0x50  AutoRun.o [1]
+  .bss               zero     0x2000'8ad4     0x50  AutoRun.o [1]
+  .bss               zero     0x2000'8b24     0x3c  AutoRun.o [1]
+  .bss               zero     0x2000'8b60     0x1c  Gcode.o [1]
+  .bss               zero     0x2000'8b7c     0x18  dlmalloc.o [2]
+  .bss               zero     0x2000'8b94     0x10  AutoRun.o [1]
+  .bss               zero     0x2000'8ba4     0x10  usbh_hid_keybd.o [1]
+  .bss               zero     0x2000'8bb4      0xc  ff_gen_drv.o [1]
+  .bss               zero     0x2000'8bc0      0x4  Action.o [1]
+  .bss               zero     0x2000'8bc8      0x8  Action.o [1]
+  .bss               zero     0x2000'8bd0      0x8  Action.o [1]
+  .bss               zero     0x2000'8bd8      0x8  inout.o [1]
+  .bss               zero     0x2000'8be0      0x8  inout.o [1]
+  .bss               zero     0x2000'8be8      0x8  inout.o [1]
+  .bss               zero     0x2000'8bf0      0x8  inout.o [1]
+  .bss               zero     0x2000'8bf8      0x8  inout.o [1]
+  .bss               zero     0x2000'8c00      0x8  usbh_hid_keybd.o [1]
+  .bss               zero     0x2000'8c08      0x4  Action.o [1]
+  .bss               zero     0x2000'8c0c      0x4  Action.o [1]
+  .bss               zero     0x2000'8c10      0x4  Action.o [1]
+  .bss               zero     0x2000'8c14      0x4  Alarm.o [1]
+  .bss               zero     0x2000'8c18      0x4  Alarm.o [1]
+  .bss               zero     0x2000'8c1c      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c20      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c24      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c28      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c2c      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c30      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c34      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c38      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c3c      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c40      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c44      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c48      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c4c      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c50      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c54      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c58      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c5c      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c60      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c64      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c68      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c6c      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c70      0x4  AutoRun.o [1]
+  .bss               zero     0x2000'8c74      0x4  Encode.o [1]
+  .bss               zero     0x2000'8c78      0x4  Encode.o [1]
+  .bss               zero     0x2000'8c7c      0x4  fatfs.o [1]
+  .bss               zero     0x2000'8c80      0x4  ff.o [1]
+  .bss               zero     0x2000'8c84      0x4  Gcode.o [1]
+  .bss               zero     0x2000'8c88      0x4  Gcode.o [1]
+  .bss               zero     0x2000'8c8c      0x4  Gcode.o [1]
+  .bss               zero     0x2000'8c90      0x4  Gcode.o [1]
+  .bss               zero     0x2000'8c94      0x4  led.o [1]
+  .bss               zero     0x2000'8c98      0x4  Manual.o [1]
+  .bss               zero     0x2000'8c9c      0x4  serialbus.o [1]
+  .bss               zero     0x2000'8ca0      0x4  serialbus.o [1]
+  .bss               zero     0x2000'8ca4      0x4  serialbus.o [1]
+  .bss               zero     0x2000'8ca8      0x4  serialbus.o [1]
+  .bss               zero     0x2000'8cac      0x4  serialbus.o [1]
+  .bss               zero     0x2000'8cb0      0x4  serialbus.o [1]
+  .bss               zero     0x2000'8cb4      0x4  serialbus.o [1]
+  .bss               zero     0x2000'8cb8      0x4  serialbus.o [1]
+  .bss               zero     0x2000'8cbc      0x4  serialbus.o [1]
+  .bss               zero     0x2000'8cc0      0x4  serialbus.o [1]
+  .bss               zero     0x2000'8cc4      0x4  serialbus.o [1]
+  .bss               zero     0x2000'8cc8      0x4  serialbus.o [1]
+  .bss               zero     0x2000'8ccc      0x4  serialbus.o [1]
+  .bss               zero     0x2000'8cd0      0x4  serialbus.o [1]
+  .bss               zero     0x2000'8cd4      0x4  serialbus.o [1]
+  .bss               zero     0x2000'8cd8      0x4  timer.o [1]
+  .bss               zero     0x2000'8cdc      0x4  usermemory.o [1]
+  .bss               zero     0x2000'8ce0      0x4  usermemory.o [1]
+  .bss               zero     0x2000'8ce4      0x4  usermemory.o [1]
+  .bss               zero     0x2000'8ce8      0x4  usermemory.o [1]
+  .bss               zero     0x2000'8cec      0x4  usermemory.o [1]
+  .bss               zero     0x2000'8cf0      0x4  usermemory.o [1]
+  .bss               zero     0x2000'8cf4      0x4  usermemory.o [1]
+  .bss               zero     0x2000'8cf8      0x4  usermemory.o [1]
+  .bss               zero     0x2000'8cfc      0x4  usermemory.o [1]
+  .bss               zero     0x2000'8d00      0x4  usermemory.o [1]
+  .bss               zero     0x2000'8d04      0x4  usermemory.o [1]
+  .bss               zero     0x2000'8d08      0x4  usermemory.o [1]
+  .bss               zero     0x2000'8d0c      0x4  usermemory.o [1]
+  .bss               zero     0x2000'8d10      0x4  usermemory.o [1]
+  .bss               zero     0x2000'8d14      0x4  xgetmemchunk.o [2]
+  .bss               zero     0x2000'8d18      0x2  Action.o [1]
+  .bss               zero     0x2000'8d1a      0x2  Action.o [1]
+  .bss               zero     0x2000'8d1c      0x2  Action.o [1]
+  .bss               zero     0x2000'8d1e      0x2  Action.o [1]
+  .bss               zero     0x2000'8d20      0x2  AutoRun.o [1]
+  .bss               zero     0x2000'8d22      0x2  AutoRun.o [1]
+  .bss               zero     0x2000'8d24      0x2  AutoRun.o [1]
+  .bss               zero     0x2000'8d26      0x2  AutoRun.o [1]
+  .bss               zero     0x2000'8d28      0x2  AutoRun.o [1]
+  .bss               zero     0x2000'8d2a      0x2  AutoRun.o [1]
+  .bss               zero     0x2000'8d2c      0x2  AutoRun.o [1]
+  .bss               zero     0x2000'8d2e      0x2  AutoRun.o [1]
+  .bss               zero     0x2000'8d30      0x2  ff.o [1]
+  .bss               zero     0x2000'8d32      0x2  Manual.o [1]
+  .bss               zero     0x2000'8d34      0x2  Manual.o [1]
+  .bss               zero     0x2000'8d36      0x2  Manual.o [1]
+  .bss               zero     0x2000'8d38      0x2  usermemory.o [1]
+  .bss               zero     0x2000'8d3a      0x2  w25qxx.o [1]
+  .bss               zero     0x2000'8d3c      0x1  Action.o [1]
+  .bss               zero     0x2000'8d3d      0x1  Action.o [1]
+  .bss               zero     0x2000'8d3e      0x1  Action.o [1]
+  .bss               zero     0x2000'8d3f      0x1  Action.o [1]
+  .bss               zero     0x2000'8d40      0x1  Action.o [1]
+  .bss               zero     0x2000'8d41      0x1  Action.o [1]
+  .bss               zero     0x2000'8d42      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d43      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d44      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d45      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d46      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d47      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d48      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d49      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d4a      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d4b      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d4c      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d4d      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d4e      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d4f      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d50      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d51      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d52      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d53      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d54      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d55      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d56      0x1  AutoRun.o [1]
+  .bss               zero     0x2000'8d57      0x1  Encode.o [1]
+  .bss               zero     0x2000'8d58      0x1  Encode.o [1]
+  .bss               zero     0x2000'8d59      0x1  fatfs.o [1]
+  .bss               zero     0x2000'8d5a      0x1  Gcode.o [1]
+  .bss               zero     0x2000'8d5b      0x1  ModbusSlave.o [1]
+  .bss               zero     0x2000'8d5c      0x1  Touch.o [1]
+  .bss               zero     0x2000'8d5d      0x1  Touch.o [1]
+  .bss               zero     0x2000'8d5e      0x1  Touch.o [1]
+  .bss               zero     0x2000'8d5f      0x1  usb_host.o [1]
+  .bss               zero     0x2000'8d60      0x1  usb_host.o [1]
+                            - 0x2000'8d61   0x8afd
+
+"P5", part 3 of 3:                          0x2000
+  HEAP                        0x2000'8d68   0x2000  <Block>
+    HEAP             uninit   0x2000'8d68   0x2000  <Block tail>
+                            - 0x2000'ad68   0x2000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+   0x803'6af0   0x80f'ffff  0xc'9510
+  0x1000'4650  0x1000'ffff    0xb9b0
+  0x2000'8d64  0x2000'8d67       0x4
+  0x2000'ad68  0x2001'bfff  0x1'1298
+  0x2001'c000  0x2001'ffff    0x4000
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    2 destination ranges, total size 0xb14d:
+          0x1000'2000  0x2650
+          0x2000'0264  0x8afd
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x264 (100% of destination):
+           0x803'688c   0x264
+    1 destination range, total size 0x262:
+          0x2000'0000   0x262
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+command line/config:
+    -------------------------------------------------
+    Total:
+
+F:\www\plc19020_ckz\Debug\Obj: [1]
+    Action.o                    604                46
+    Alarm.o                   2 912                80
+    AutoRun.o                19 500             2 321
+    Encode.o                    752        2       16
+    Gcode.o                   2 876       36      145
+    Manual.o                  3 576                10
+    ModbusSlave.o             2 380      532    2 565
+    ServoStep.o               3 328      884    1 428
+    Touch.o                   5 160                 3
+    delay.o                     136        4        4
+    diskio.o                    144
+    fatfs.o                      44       16        5
+    ff.o                      4 160      164        6
+    ff_gen_drv.o                 96                12
+    iicbus.o                    928
+    inout.o                   2 980               140
+    led.o                        80                 4
+    main.o                      138       12
+    pwm.o                       936
+    serialbus.o               1 356                60
+    spibus.o                    284
+    startup_stm32f407xx.o       688
+    stm32f4xx_hal_cortex.o      212
+    stm32f4xx_hal_gpio.o        584
+    stm32f4xx_hal_hcd.o       4 554
+    stm32f4xx_it.o               44
+    stm32f4xx_ll_usb.o        2 604
+    sys.o                       904        4        4
+    timer.o                     188                 4
+    unicode.o                   160    1 216
+    usb_host.o                1 524      280   19 630
+    usbh_conf.o               1 210             1 328
+    usbh_core.o               2 068      632
+    usbh_ctlreq.o             1 580       24
+    usbh_diskio.o               624       84      512
+    usbh_hid.o                1 542      156       32
+    usbh_hid_keybd.o            376      784       24
+    usbh_hid_parser.o           202
+    usbh_ioreq.o                320
+    usbh_msc.o                3 018      400       32
+    usbh_msc_bot.o            1 084
+    usbh_msc_scsi.o           1 160
+    usbh_pipes.o                220
+    usermemory.o              1 628            12 986
+    w25qxx.o                    928       20    4 098
+    -------------------------------------------------
+    Total:                   79 792    5 250   45 495
+
+dl7M_tln.a: [2]
+    abort.o                       6
+    dlmalloc.o                5 344               496
+    exit.o                        4
+    heaptramp0.o                  4
+    low_level_init.o              4
+    xgetmemchunk.o               44                 4
+    -------------------------------------------------
+    Total:                    5 406               500
+
+m7M_tls.a: [3]
+    DblAdd.o                    378
+    DblCmpEq.o                   32
+    DblDiv.o                    582
+    DblMul.o                    418
+    DblSub.o                    226
+    DblToS32.o                   58
+    S32ToDbl.o                   34
+    U32ToDbl.o                   26
+    fpinit_M.o                   34
+    -------------------------------------------------
+    Total:                    1 788
+
+rt7M_tl.a: [4]
+    ABImemclr4.o                  6
+    ABImemcpy.o                 166
+    ABImemset.o                 102
+    ABImemset48.o                50
+    cexit.o                      10
+    cmain.o                      30
+    copy_init3.o                 44
+    cstartup_M.o                 12
+    data_init.o                  40
+    strlen.o                     54
+    zero_init3.o                 58
+    -------------------------------------------------
+    Total:                      572
+
+shb_l.a: [5]
+    exit.o                       20
+    -------------------------------------------------
+    Total:                       20
+
+    Gaps                         34        4        4
+    Linker created                        46   16 384
+-----------------------------------------------------
+    Grand Total:             87 612    5 300   62 383
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address    Size  Type      Object
+-----                       -------    ----  ----      ------
+.iar.init_table$$Base    0x803'6054           --   Gb  - Linker created -
+.iar.init_table$$Limit   0x803'6080           --   Gb  - Linker created -
+?main                    0x803'6281          Code  Gb  cmain.o [4]
+Action                   0x802'4ff1    0x20  Code  Gb  Action.o [1]
+AlarmProtect             0x802'a5a9    0x1c  Code  Gb  Alarm.o [1]
+AlarmTime               0x1000'4530    0x48  Data  Lc  Alarm.o [1]
+Appli_state_FS          0x2000'8d60     0x1  Data  Gb  usb_host.o [1]
+Appli_state_HS          0x2000'8d5f     0x1  Data  Gb  usb_host.o [1]
+AutoRun                  0x802'3779    0xa8  Code  Gb  AutoRun.o [1]
+AutoWorkProc             0x802'34dd   0x286  Code  Gb  AutoRun.o [1]
+AutoWorkStopCheck        0x802'304d    0xaa  Code  Gb  AutoRun.o [1]
+AxisOrign_PWM            0x802'54b3    0x54  Code  Gb  ServoStep.o [1]
+BinToAscTab              0x803'6608    0x10  Data  Lc  ModbusSlave.o [1]
+BlinkRunLED              0x803'330b    0x26  Code  Gb  led.o [1]
+BlinkRunLED::flashTick  0x2000'8c94     0x4  Data  Lc  led.o [1]
+BusFault_Handler         0x803'5ecf     0x2  Code  Gb  stm32f4xx_it.o [1]
+CLearWorkFlag            0x802'6801    0x1c  Code  Gb  Gcode.o [1]
+CRCTblHi                0x2000'0000   0x100  Data  Lc  ModbusSlave.o [1]
+CRCTblLo                0x2000'0100   0x100  Data  Lc  ModbusSlave.o [1]
+CSTACK$$Base            0x1000'0000           --   Gb  - Linker created -
+CSTACK$$Limit           0x1000'2000           --   Gb  - Linker created -
+CalDrillLocation         0x802'3d15    0x84  Code  Gb  AutoRun.o [1]
+CalFreqTab               0x802'5011    0xbe  Code  Gb  ServoStep.o [1]
+CalGearRatio             0x802'4f05    0xb6  Code  Gb  Action.o [1]
+CalcCrc                  0x803'3379    0x46  Code  Lc  ModbusSlave.o [1]
+CalcLrc                  0x803'335f    0x1a  Code  Lc  ModbusSlave.o [1]
+CaoModeSelect            0x802'8ae9    0x10  Code  Gb  Touch.o [1]
+CheckForOnePlug          0x802'39dd    0x34  Code  Gb  AutoRun.o [1]
+CheckHoleInfo            0x802'4019    0xfe  Code  Gb  AutoRun.o [1]
+CheckHoleNum            0x2000'8d2a     0x2  Data  Gb  AutoRun.o [1]
+CheckNearPositon         0x802'0ee5    0x22  Code  Gb  AutoRun.o [1]
+CheckSgnFilter          0x2000'8c74     0x4  Data  Gb  Encode.o [1]
+CheckSgnFilterOff       0x2000'8c78     0x4  Data  Gb  Encode.o [1]
+CheckStart               0x802'7879    0x6c  Code  Gb  Touch.o [1]
+ClearDMAInterruputFlag   0x802'd733    0x72  Code  Gb  serialbus.o [1]
+ClearPlugBit             0x802'81cd    0x4e  Code  Gb  Touch.o [1]
+ClearRunningData         0x802'a4a1    0x3e  Code  Gb  Alarm.o [1]
+ClrGcodeOver             0x802'652f    0x16  Code  Gb  Gcode.o [1]
+CodeWorkScanProc         0x802'2657    0xe6  Code  Gb  AutoRun.o [1]
+CurDepth                0x2000'8d28     0x2  Data  Gb  AutoRun.o [1]
+CurToolOffsetX          0x2000'8c84     0x4  Data  Lc  Gcode.o [1]
+CurToolOffsetY          0x2000'8c88     0x4  Data  Lc  Gcode.o [1]
+CurWoodLength           0x2000'8c40     0x4  Data  Lc  AutoRun.o [1]
+CustomPlugSelect         0x802'821b   0x12e  Code  Gb  Touch.o [1]
+DR_CCW_X                 0x802'a80b    0x24  Code  Gb  pwm.o [1]
+DR_CCW_Y                 0x802'a853    0x24  Code  Gb  pwm.o [1]
+DR_CCW_Z                 0x802'a879     0x2  Code  Gb  pwm.o [1]
+DR_CW_X                  0x802'a7e7    0x24  Code  Gb  pwm.o [1]
+DR_CW_Y                  0x802'a82f    0x24  Code  Gb  pwm.o [1]
+DR_CW_Z                  0x802'a877     0x2  Code  Gb  pwm.o [1]
+DataCompare              0x802'3e09   0x202  Code  Lc  AutoRun.o [1]
+DeInitStateMachine       0x802'bc7d    0x5a  Code  Lc  usbh_core.o [1]
+DebugMon_Handler         0x803'5ed5     0x2  Code  Gb  stm32f4xx_it.o [1]
+DecodeInitProc           0x802'5db1    0x2e  Code  Gb  Gcode.o [1]
+Delay_Configuration      0x803'058d    0x26  Code  Gb  delay.o [1]
+DepthCal                 0x802'065f    0x48  Code  Gb  AutoRun.o [1]
+DepthCheckProc           0x802'2f7d    0xb8  Code  Gb  AutoRun.o [1]
+DingCaoDepth            0x2000'8b24    0x3c  Data  Lc  AutoRun.o [1]
+DingCaoWitch            0x2000'8944    0x78  Data  Lc  AutoRun.o [1]
+DingData                0x2000'8d00     0x4  Data  Gb  usermemory.o [1]
+DingHoleWorkPro          0x802'2759   0x2bc  Code  Gb  AutoRun.o [1]
+DingHoleWorkPro::delaytick
+                        0x2000'8c5c     0x4  Data  Lc  AutoRun.o [1]
+DingWeiCao              0x2000'88cc    0x78  Data  Lc  AutoRun.o [1]
+DingWorkFlag            0x2000'8d47     0x1  Data  Lc  AutoRun.o [1]
+DingWorkProc             0x802'335d   0x15c  Code  Gb  AutoRun.o [1]
+DingWorkScanProc         0x802'2565    0xf2  Code  Gb  AutoRun.o [1]
+DingweiDepth            0x2000'8ad4    0x50  Data  Lc  AutoRun.o [1]
+DingweiDist             0x2000'8a84    0x50  Data  Lc  AutoRun.o [1]
+DingweiWitch            0x2000'8854    0x78  Data  Lc  AutoRun.o [1]
+DrillHoleLocation       0x2000'8c68     0x4  Data  Gb  AutoRun.o [1]
+DrillMotorStopProc       0x802'a3d9    0xc8  Code  Gb  Alarm.o [1]
+DrillMotorStopProc::Mortstopdelay
+                        0x2000'8c18     0x4  Data  Lc  Alarm.o [1]
+DrillMotorStopStep      0x2000'8d20     0x2  Data  Gb  AutoRun.o [1]
+DrillRunStepDelay       0x2000'8c30     0x4  Data  Lc  AutoRun.o [1]
+DrillingHoleProc         0x802'45bd   0x276  Code  Lc  AutoRun.o [1]
+DrillingHoleProc::BackDelay
+                        0x2000'8c6c     0x4  Data  Lc  AutoRun.o [1]
+DrillingSlotProc         0x802'4859   0x4f4  Code  Lc  AutoRun.o [1]
+DrillingSlotProc::delaytick
+                        0x2000'8c70     0x4  Data  Lc  AutoRun.o [1]
+DuanCaoWorkPro           0x802'1ed1   0x68e  Code  Gb  AutoRun.o [1]
+DuanCaoWorkPro::_lalldepth
+                        0x2000'8c58     0x4  Data  Lc  AutoRun.o [1]
+DuanCaoWorkPro::_lqigangfdelay
+                        0x2000'8c54     0x4  Data  Lc  AutoRun.o [1]
+DuanCaoWorkPro::delaytick
+                        0x2000'8c50     0x4  Data  Lc  AutoRun.o [1]
+DuanCaoXMoveAction       0x802'1dd7    0x92  Code  Gb  AutoRun.o [1]
+EncodePer               0x2000'0260     0x1  Data  Lc  Encode.o [1]
+EncoderDirSet            0x802'6a07    0x22  Code  Gb  Encode.o [1]
+EncoderInit              0x802'68f9   0x10e  Code  Gb  Encode.o [1]
+Error_Handler            0x803'0589     0x2  Code  Gb  main.o [1]
+ExCvt                    0x803'5e48    0x80  Data  Lc  ff.o [1]
+FATFS_LinkDriver         0x803'3d09    0x12  Code  Gb  ff_gen_drv.o [1]
+FATFS_LinkDriverEx       0x803'3cc1    0x48  Code  Gb  ff_gen_drv.o [1]
+FactoryParam            0x2000'8ce4     0x4  Data  Gb  usermemory.o [1]
+FatFs                   0x2000'8c80     0x4  Data  Lc  ff.o [1]
+FileNameData            0x2000'8d04     0x4  Data  Gb  usermemory.o [1]
+FirstInit                0x802'6c05   0x28c  Code  Gb  usermemory.o [1]
+FreqTab_X               0x1000'4000   0x12c  Data  Lc  ServoStep.o [1]
+FreqTab_X2              0x1000'412c   0x12c  Data  Lc  ServoStep.o [1]
+FreqTab_XX               0x803'57f4   0x1c0  Data  Gb  ServoStep.o [1]
+FreqTab_Y               0x1000'4258   0x12c  Data  Lc  ServoStep.o [1]
+FreqTab_Y2              0x1000'4384   0x12c  Data  Lc  ServoStep.o [1]
+FreqTab_YY               0x803'59b4   0x1a4  Data  Gb  ServoStep.o [1]
+Fsid                    0x2000'8d30     0x2  Data  Lc  ff.o [1]
+GCodeLineDecode          0x802'5e35   0x264  Code  Gb  Gcode.o [1]
+GCodePreRead             0x802'681d    0x6e  Code  Gb  Gcode.o [1]
+GCodePreRead_M           0x802'67b1    0x50  Code  Gb  Gcode.o [1]
+GCodeRunParam           0x2000'8b60    0x1c  Data  Gb  Gcode.o [1]
+GCodeRunProc             0x802'6667   0x14a  Code  Gb  Gcode.o [1]
+GCodeRunProc::gcodebuff
+                        0x2000'8c90     0x4  Data  Lc  Gcode.o [1]
+GCodeRunProc::gline     0x2000'89bc    0x64  Data  Lc  Gcode.o [1]
+GCode_G_Proc             0x802'6159   0x1a2  Code  Gb  Gcode.o [1]
+GCode_M_Proc             0x802'62fb    0xd8  Code  Gb  Gcode.o [1]
+GCode_T_Proc             0x802'63d3   0x142  Code  Gb  Gcode.o [1]
+GPIO_AF_Set              0x802'b0e7    0x54  Code  Gb  sys.o [1]
+GPIO_Set                 0x802'b13b    0xf4  Code  Gb  sys.o [1]
+GPIO_init                0x803'2721   0x232  Code  Gb  inout.o [1]
+GcodeAxisSelectCheck     0x802'8351    0x58  Code  Gb  Touch.o [1]
+GcodeFile               0x2000'0264  0x40c8  Data  Gb  usb_host.o [1]
+GcodeRunOverProc         0x802'65a3    0xc4  Code  Gb  Gcode.o [1]
+GetGcodeOver             0x802'6545     0x8  Code  Gb  Gcode.o [1]
+GetLine                  0x802'5ddf    0x52  Code  Gb  Gcode.o [1]
+GetRealInput             0x803'2953   0x384  Code  Gb  inout.o [1]
+GotoWorkOrign            0x802'2af5    0x54  Code  Gb  AutoRun.o [1]
+HAL_Delay                0x803'05f9     0xa  Code  Gb  delay.o [1]
+HAL_GPIO_Init            0x802'f019   0x20e  Code  Gb  stm32f4xx_hal_gpio.o [1]
+HAL_HCD_Connect_Callback
+                         0x802'dd43     0xe  Code  Gb  usbh_conf.o [1]
+HAL_HCD_Disconnect_Callback
+                         0x802'dd51     0xe  Code  Gb  usbh_conf.o [1]
+HAL_HCD_GetCurrentFrame
+                         0x802'f875     0xc  Code  Gb  stm32f4xx_hal_hcd.o [1]
+HAL_HCD_GetCurrentSpeed
+                         0x802'f881     0xc  Code  Gb  stm32f4xx_hal_hcd.o [1]
+HAL_HCD_HC_GetURBState   0x802'f85b     0xe  Code  Gb  stm32f4xx_hal_hcd.o [1]
+HAL_HCD_HC_GetXferCount
+                         0x802'f869     0xc  Code  Gb  stm32f4xx_hal_hcd.o [1]
+HAL_HCD_HC_Halt          0x802'f44b    0x30  Code  Gb  stm32f4xx_hal_hcd.o [1]
+HAL_HCD_HC_Init          0x802'f391    0xba  Code  Gb  stm32f4xx_hal_hcd.o [1]
+HAL_HCD_HC_NotifyURBChange_Callback
+                         0x802'dd5f     0x2  Code  Gb  usbh_conf.o [1]
+HAL_HCD_HC_SubmitRequest
+                         0x802'f47b   0x244  Code  Gb  stm32f4xx_hal_hcd.o [1]
+HAL_HCD_IRQHandler       0x802'f6bf   0x13c  Code  Gb  stm32f4xx_hal_hcd.o [1]
+HAL_HCD_Init             0x802'f335    0x5c  Code  Gb  stm32f4xx_hal_hcd.o [1]
+HAL_HCD_MspInit          0x802'dc55    0xe0  Code  Gb  usbh_conf.o [1]
+HAL_HCD_ResetPort        0x802'f84f     0xc  Code  Gb  stm32f4xx_hal_hcd.o [1]
+HAL_HCD_SOF_Callback     0x802'dd35     0xe  Code  Gb  usbh_conf.o [1]
+HAL_HCD_Start            0x802'f7fb    0x2e  Code  Gb  stm32f4xx_hal_hcd.o [1]
+HAL_HCD_Stop             0x802'f829    0x26  Code  Gb  stm32f4xx_hal_hcd.o [1]
+HAL_NVIC_EnableIRQ       0x802'f317     0xe  Code  Gb  stm32f4xx_hal_cortex.o [1]
+HAL_NVIC_SetPriority     0x802'f2ed    0x2a  Code  Gb  stm32f4xx_hal_cortex.o [1]
+HCD_HC_IN_IRQHandler     0x802'f88d   0x55e  Code  Lc  stm32f4xx_hal_hcd.o [1]
+HCD_HC_OUT_IRQHandler    0x802'fdeb   0x552  Code  Lc  stm32f4xx_hal_hcd.o [1]
+HCD_Port_IRQHandler      0x803'0435    0xca  Code  Lc  stm32f4xx_hal_hcd.o [1]
+HCD_RXQLVL_IRQHandler    0x803'033d    0xf2  Code  Lc  stm32f4xx_hal_hcd.o [1]
+HEAP$$Base              0x2000'8d68           --   Gb  - Linker created -
+HEAP$$Limit             0x2000'ad68           --   Gb  - Linker created -
+HID_Class               0x2000'0200    0x20  Data  Gb  usbh_hid.o [1]
+HID_KEYBRD_Codes         0x803'5c58    0xe8  Data  Lc  usbh_hid_keybd.o [1]
+HID_KEYBRD_Key           0x803'5d40    0x84  Data  Lc  usbh_hid_keybd.o [1]
+HID_KEYBRD_ShiftKey      0x803'5dc4    0x84  Data  Lc  usbh_hid_keybd.o [1]
+HID_ReadItem             0x802'ef4f    0xca  Code  Gb  usbh_hid_parser.o [1]
+HardFault_Handler        0x803'5ecb     0x2  Code  Gb  stm32f4xx_it.o [1]
+HoleCurrrentDrillDepth  0x2000'8c1c     0x4  Data  Lc  AutoRun.o [1]
+HoleDrillDepthProcess    0x802'3d99    0x4e  Code  Lc  AutoRun.o [1]
+HolePos                 0x2000'8cec     0x4  Data  Gb  usermemory.o [1]
+HoleinfoB               0x2000'86c4   0x190  Data  Gb  AutoRun.o [1]
+HoleinfoF               0x2000'8534   0x190  Data  Gb  AutoRun.o [1]
+I2C1_Ack                 0x802'b4a3     0xc  Code  Gb  iicbus.o [1]
+I2C1_CheckEvent          0x802'b451    0x20  Code  Gb  iicbus.o [1]
+I2C1_MasterReadData      0x802'b50d    0x14  Code  Gb  iicbus.o [1]
+I2C1_MasterSendData      0x802'b4f5    0x18  Code  Gb  iicbus.o [1]
+I2C1_NoAck               0x802'b495     0xe  Code  Gb  iicbus.o [1]
+I2C1_Read_DeviceType     0x802'b4dd    0x18  Code  Gb  iicbus.o [1]
+I2C1_Start               0x802'b47d    0x18  Code  Gb  iicbus.o [1]
+I2C1_Stop                0x802'b471     0xc  Code  Gb  iicbus.o [1]
+I2C1_Write_DeviceType    0x802'b4c5    0x18  Code  Gb  iicbus.o [1]
+I2C_CheckBusy            0x802'b4af    0x16  Code  Gb  iicbus.o [1]
+INTX_ENABLE              0x802'b231     0x4  Code  Gb  sys.o [1]
+IOConfigParam           0x2000'8cfc     0x4  Data  Gb  usermemory.o [1]
+InitToolOutProc          0x802'31d9   0x118  Code  Gb  AutoRun.o [1]
+InitVariable             0x802'6f0b    0x42  Code  Gb  usermemory.o [1]
+InputFiltering          0x2000'8a20    0x64  Data  Gb  inout.o [1]
+IsGcodeRunOver           0x802'654d    0x12  Code  Gb  Gcode.o [1]
+KeyBoardProc             0x802'8af9   0x142  Code  Gb  Touch.o [1]
+KeyPress1Flag           0x2000'8d3e     0x1  Data  Gb  Action.o [1]
+KeyPress2Flag           0x2000'8d3f     0x1  Data  Gb  Action.o [1]
+KeyPress3Flag           0x2000'8d40     0x1  Data  Gb  Action.o [1]
+KeyPress4Flag           0x2000'8d41     0x1  Data  Gb  Action.o [1]
+KeyPressIn               0x802'7f9f    0x14  Code  Gb  Touch.o [1]
+KeyPressIn1              0x802'78e5   0x192  Code  Gb  Touch.o [1]
+KeyPressIn2              0x802'7a77   0x1c0  Code  Gb  Touch.o [1]
+KeyPressIn2::i_flg      0x2000'8d5c     0x1  Data  Lc  Touch.o [1]
+KeyPressIn3              0x802'7c37   0x1b4  Code  Gb  Touch.o [1]
+KeyPressIn3::i_flg      0x2000'8d5d     0x1  Data  Lc  Touch.o [1]
+KeyPressIn4              0x802'7deb   0x1b4  Code  Gb  Touch.o [1]
+KeyPressIn4::i_flg      0x2000'8d5e     0x1  Data  Lc  Touch.o [1]
+LCalRunPulse             0x802'55f5    0xba  Code  Gb  ServoStep.o [1]
+LeftToolOutProc          0x802'01fb    0x72  Code  Gb  AutoRun.o [1]
+LfnOfs                   0x803'65f8    0x10  Data  Lc  ff.o [1]
+LongBoardSet             0x802'7845    0x34  Code  Gb  Touch.o [1]
+LookForBoardHead         0x802'2c2d   0x14e  Code  Gb  AutoRun.o [1]
+LookForBoardHead::delay
+                        0x2000'8c60     0x4  Data  Lc  AutoRun.o [1]
+LookForBoardHeadCheck    0x802'2b59    0xce  Code  Gb  AutoRun.o [1]
+LookForBoardHeadstep    0x2000'8d45     0x1  Data  Lc  AutoRun.o [1]
+MV_AccDec_Set            0x802'5707    0x32  Code  Gb  ServoStep.o [1]
+MV_Const_Move            0x802'5843    0xc4  Code  Gb  ServoStep.o [1]
+MV_Dec_Stop              0x802'581d    0x26  Code  Gb  ServoStep.o [1]
+MV_Get_Command_Pos       0x802'5761    0x1c  Code  Gb  ServoStep.o [1]
+MV_Move_To_Position      0x802'594f    0xe6  Code  Gb  ServoStep.o [1]
+MV_Pmove                 0x802'5795    0x70  Code  Gb  ServoStep.o [1]
+MV_Set_Acc               0x802'56df    0x28  Code  Gb  ServoStep.o [1]
+MV_Set_Command_Pos       0x802'577d    0x18  Code  Gb  ServoStep.o [1]
+MV_Set_Dec               0x802'5739    0x28  Code  Gb  ServoStep.o [1]
+MV_Set_Limit_P           0x802'5805    0x18  Code  Gb  ServoStep.o [1]
+MV_Set_Speed             0x802'56c7    0x18  Code  Gb  ServoStep.o [1]
+MV_Set_Startv            0x802'56af    0x18  Code  Gb  ServoStep.o [1]
+MX_FATFS_Init            0x803'32c5    0x1a  Code  Gb  fatfs.o [1]
+MX_USB_HOST_Init         0x802'aa4d    0x4c  Code  Gb  usb_host.o [1]
+MX_USB_HOST_Process      0x802'afb5    0x10  Code  Gb  usb_host.o [1]
+MY_NVIC_Init             0x802'b077    0x70  Code  Gb  sys.o [1]
+MY_NVIC_PriorityGroupConfig
+                         0x802'b04f    0x28  Code  Gb  sys.o [1]
+MY_NVIC_SetVectorTable   0x802'b041     0xe  Code  Gb  sys.o [1]
+ManualAction             0x802'94db    0x20  Code  Gb  Manual.o [1]
+ManualFilename          0x2000'8d08     0x4  Data  Gb  usermemory.o [1]
+ManualGetFileName        0x802'aecd    0xe8  Code  Gb  usb_host.o [1]
+ManualProc_IO            0x802'9299   0x242  Code  Gb  Manual.o [1]
+ManualProc_XAxis         0x802'909d   0x1fc  Code  Gb  Manual.o [1]
+ManualProc_YAxis         0x802'8c6d   0x212  Code  Gb  Manual.o [1]
+ManualProc_ZAxis         0x802'8e7f   0x21e  Code  Gb  Manual.o [1]
+MemManage_Handler        0x803'5ecd     0x2  Code  Gb  stm32f4xx_it.o [1]
+ModbusDecodeAscii        0x803'342d    0xd0  Code  Lc  ModbusSlave.o [1]
+ModbusDecodeRTU          0x803'3533    0x3a  Code  Lc  ModbusSlave.o [1]
+ModbusDelta              0x803'3aa7    0x8c  Code  Gb  ModbusSlave.o [1]
+ModbusEncodeAscii        0x803'33bf    0x6e  Code  Lc  ModbusSlave.o [1]
+ModbusEncodeRTU          0x803'34fd    0x36  Code  Lc  ModbusSlave.o [1]
+ModbusReadCoil           0x803'356d    0xa2  Code  Lc  ModbusSlave.o [1]
+ModbusReadRegister       0x803'360f    0x64  Code  Lc  ModbusSlave.o [1]
+ModbusStandard           0x803'39ff    0xa8  Code  Lc  ModbusSlave.o [1]
+ModbusWriteCoilMultiple
+                         0x803'375b   0x1cc  Code  Lc  ModbusSlave.o [1]
+ModbusWriteCoilSingle    0x803'3673    0x8e  Code  Lc  ModbusSlave.o [1]
+ModbusWriteRegisterMultiple
+                         0x803'3927    0x96  Code  Lc  ModbusSlave.o [1]
+ModbusWriteRegisterSingle
+                         0x803'3701    0x5a  Code  Lc  ModbusSlave.o [1]
+MotorCoilSelect          0x802'06a7   0x1da  Code  Gb  AutoRun.o [1]
+MotorCoilSelectDelay    0x2000'8c28     0x4  Data  Gb  AutoRun.o [1]
+MotorCoilSelectStep     0x2000'8d26     0x2  Data  Gb  AutoRun.o [1]
+MotorStartDelay         0x2000'8c2c     0x4  Data  Gb  AutoRun.o [1]
+MoveAction_Pulse         0x802'5b03    0x96  Code  Gb  ServoStep.o [1]
+NMI_Handler              0x803'5ec9     0x2  Code  Gb  stm32f4xx_it.o [1]
+NVIC_EnableIRQ           0x802'f26b    0x16  Code  Lc  stm32f4xx_hal_cortex.o [1]
+NVIC_EncodePriority      0x802'f2ad    0x40  Code  Lc  stm32f4xx_hal_cortex.o [1]
+NVIC_GetPriorityGrouping
+                         0x802'f261     0xa  Code  Lc  stm32f4xx_hal_cortex.o [1]
+NVIC_SetPriority         0x802'f281    0x2c  Code  Lc  stm32f4xx_hal_cortex.o [1]
+NVIC_SetPriority         0x803'2665    0x2c  Code  Lc  timer.o [1]
+NVIC_SystemReset         0x803'3341    0x1e  Code  Lc  ModbusSlave.o [1]
+NeedWorkNum             0x2000'8d24     0x2  Data  Gb  AutoRun.o [1]
+NoworkStopdelay         0x2000'8c20     0x4  Data  Gb  AutoRun.o [1]
+OTG_FS_IRQHandler        0x803'5ed9     0xa  Code  Gb  stm32f4xx_it.o [1]
+OTG_HS_IRQHandler        0x803'5ee3     0xa  Code  Gb  stm32f4xx_it.o [1]
+OncePowerResume          0x802'9a65    0x56  Code  Gb  Alarm.o [1]
+OneHolePlugFlag         0x2000'8d46     0x1  Data  Gb  AutoRun.o [1]
+OutSideStop              0x802'2d81   0x1f4  Code  Lc  AutoRun.o [1]
+PendSV_Handler           0x803'5ed7     0x2  Code  Gb  stm32f4xx_it.o [1]
+PlugAfterHolePro         0x802'3b99   0x17c  Code  Gb  AutoRun.o [1]
+PlugBeforHolePro         0x802'3a1d   0x16e  Code  Gb  AutoRun.o [1]
+PluseToPosition          0x802'4e31    0x7c  Code  Gb  Action.o [1]
+PointInit                0x802'6ea9    0x62  Code  Gb  usermemory.o [1]
+PositionToPluse          0x802'4db5    0x7c  Code  Gb  Action.o [1]
+Press1time              0x2000'8bc0     0x4  Data  Gb  Action.o [1]
+Press2time              0x2000'8c08     0x4  Data  Gb  Action.o [1]
+Press3time              0x2000'8c0c     0x4  Data  Gb  Action.o [1]
+Press4time              0x2000'8c10     0x4  Data  Gb  Action.o [1]
+PressValveOutClear       0x802'30f7    0xd2  Code  Gb  AutoRun.o [1]
+QiGangReBack             0x802'9861    0x4e  Code  Gb  Manual.o [1]
+Read24C04_nByte          0x802'b6ef    0x7a  Code  Gb  iicbus.o [1]
+ReadAxisStatus           0x802'5907    0x48  Code  Gb  ServoStep.o [1]
+ReadInout_Convert        0x803'2cd7   0x1ac  Code  Gb  inout.o [1]
+ReadInput                0x803'2ec9    0x10  Code  Gb  inout.o [1]
+ReadRobotCurrent         0x802'4ead    0x4e  Code  Gb  Action.o [1]
+RebackXYFLG             0x2000'8d3d     0x1  Data  Gb  Action.o [1]
+RebackXaxisOrign         0x802'9695   0x1b8  Code  Gb  Manual.o [1]
+RebackXaxisOrign::ResetEncodeDelay
+                        0x2000'8c98     0x4  Data  Lc  Manual.o [1]
+RebackYaxisOrign         0x802'94fb   0x192  Code  Gb  Manual.o [1]
+Region$$Table$$Base      0x803'6054           --   Gb  - Linker created -
+Region$$Table$$Limit     0x803'6080           --   Gb  - Linker created -
+ResetPeripheral          0x802'4efb     0xa  Code  Gb  Action.o [1]
+ResumeLocation           0x802'98b5   0x16a  Code  Gb  Manual.o [1]
+RightToolOutProc         0x802'0189    0x72  Code  Gb  AutoRun.o [1]
+RstPphlDlay             0x2000'8d1e     0x2  Data  Gb  Action.o [1]
+RtuFlag                 0x2000'8d5b     0x1  Data  Lc  ModbusSlave.o [1]
+RunCheck                 0x802'0d11   0x1d0  Code  Lc  AutoRun.o [1]
+RunCheck::delay         0x2000'8c48     0x4  Data  Lc  AutoRun.o [1]
+RunCheckFlag            0x2000'8d2c     0x2  Data  Lc  AutoRun.o [1]
+RunInit                  0x802'0c19    0xd8  Code  Lc  AutoRun.o [1]
+RunLedInit               0x803'32f1    0x1a  Code  Gb  led.o [1]
+SPI_ReadWriteByte        0x802'dc11    0x1e  Code  Gb  spibus.o [1]
+SPI_SetSpeed             0x802'dbeb    0x26  Code  Gb  spibus.o [1]
+SVC_Handler              0x803'5ed3     0x2  Code  Gb  stm32f4xx_it.o [1]
+Save16BitDate            0x802'6bdd    0x14  Code  Gb  usermemory.o [1]
+Save32BitDate            0x802'6bf1    0x14  Code  Gb  usermemory.o [1]
+SaveAndLoadParams        0x802'6f6d   0x250  Code  Gb  usermemory.o [1]
+SaveAndLoadParams::displayreaddelay
+                        0x2000'8d0c     0x4  Data  Lc  usermemory.o [1]
+SaveAndLoadParams::displaywritedelay
+                        0x2000'8d10     0x4  Data  Lc  usermemory.o [1]
+ScanCheckHoleProc        0x802'382d   0x1a6  Code  Lc  AutoRun.o [1]
+ScanCheckHoleProc::delay
+                        0x2000'8c64     0x4  Data  Lc  AutoRun.o [1]
+ScanCodeWorkData        0x2000'8cf8     0x4  Data  Gb  usermemory.o [1]
+ScanCodeWorkProc         0x802'2a2d    0xb4  Code  Gb  AutoRun.o [1]
+ScanDrillHoleRun         0x802'4161   0x444  Code  Lc  AutoRun.o [1]
+ServoAlarm               0x802'9abb   0x132  Code  Gb  Alarm.o [1]
+ServoDelay              0x2000'8d38     0x2  Data  Gb  usermemory.o [1]
+ServoInit                0x802'5c49    0x90  Code  Gb  ServoStep.o [1]
+ServoMotorEnable         0x802'a8db    0x24  Code  Gb  pwm.o [1]
+ServoSoftProtect         0x802'5b99    0xac  Code  Gb  ServoStep.o [1]
+SetGcodeRunStart         0x802'6515    0x1a  Code  Gb  Gcode.o [1]
+SetInputDisplay          0x803'2e83    0x46  Code  Gb  inout.o [1]
+SetNextWorkFlag          0x802'655f    0x44  Code  Gb  Gcode.o [1]
+SetOutputDisplay         0x803'2f8f    0x68  Code  Gb  inout.o [1]
+SetPlugDisplay           0x802'80d5    0xf8  Code  Gb  Touch.o [1]
+SetPlugSelect            0x802'7fb3   0x122  Code  Gb  Touch.o [1]
+SetPulse_X               0x802'5a71    0x4a  Code  Gb  ServoStep.o [1]
+SetPulse_Y               0x802'5abb    0x48  Code  Gb  ServoStep.o [1]
+SetRealOut               0x803'302d   0x182  Code  Gb  inout.o [1]
+SlotTypeFlag            0x2000'8d48     0x1  Data  Lc  AutoRun.o [1]
+SlotWorkData            0x2000'8b94    0x10  Data  Gb  AutoRun.o [1]
+SpeedParam              0x2000'8ce0     0x4  Data  Gb  usermemory.o [1]
+StartFlag               0x2000'8d55     0x1  Data  Gb  AutoRun.o [1]
+StartPWM                 0x802'5507    0xee  Code  Gb  ServoStep.o [1]
+StepInfo                0x2000'0240    0x10  Data  Lc  ServoStep.o [1]
+Stm32_Clock_Init         0x802'b32d    0x5c  Code  Gb  sys.o [1]
+StopAxis                 0x802'a295    0x3a  Code  Gb  Alarm.o [1]
+StopKeyPro               0x802'a4df    0x22  Code  Gb  Alarm.o [1]
+StopOut                  0x802'a2cf    0x66  Code  Gb  Alarm.o [1]
+StopProc                 0x802'a501    0x46  Code  Gb  Alarm.o [1]
+StopResume               0x802'a335    0x5a  Code  Gb  Alarm.o [1]
+StopRunnning             0x802'a38f    0x4a  Code  Gb  Alarm.o [1]
+SysCurrentParam         0x2000'8cf0     0x4  Data  Gb  usermemory.o [1]
+SysTick_Configuration    0x803'2691    0x34  Code  Gb  timer.o [1]
+SysTick_Handler          0x803'26c5    0x34  Code  Gb  timer.o [1]
+Sys_Clock_Set            0x802'b235    0xf8  Code  Gb  sys.o [1]
+SystemAlarmProc          0x802'9bed   0x294  Code  Gb  Alarm.o [1]
+SystemCoreClock         0x2000'0258     0x4  Data  Gb  sys.o [1]
+SystemModeSet            0x802'8461    0xd8  Code  Gb  Touch.o [1]
+SystemParam             0x2000'8cdc     0x4  Data  Gb  usermemory.o [1]
+TIM13_PWM_Init           0x802'a5c5   0x132  Code  Gb  pwm.o [1]
+TIM1_BRK_TIM9_IRQHandler
+                         0x802'a8c3    0x18  Code  Gb  pwm.o [1]
+TIM1_TRG_COM_TIM11_IRQHandler
+                         0x802'a87b    0x18  Code  Gb  pwm.o [1]
+TIM1_UP_TIM10_IRQHandler
+                         0x802'a893    0x18  Code  Gb  pwm.o [1]
+TIM3_IRQHandler          0x802'6a29    0x38  Code  Gb  Encode.o [1]
+TIM7_IRQHandler          0x802'6aa9    0xb8  Code  Gb  Encode.o [1]
+TIM7_Timer_Init          0x802'6a61    0x48  Code  Gb  Encode.o [1]
+TIM8_UP_TIM13_IRQHandler
+                         0x802'a8ab    0x18  Code  Gb  pwm.o [1]
+TIM9_PWM_Init            0x802'a6f7    0xf0  Code  Gb  pwm.o [1]
+TSlotSetProc             0x802'89d9   0x10a  Code  Gb  Touch.o [1]
+TWHoleSetProc            0x802'869d   0x1a4  Code  Gb  Touch.o [1]
+TWSlotSetProc            0x802'884d   0x184  Code  Gb  Touch.o [1]
+TWSlotWorkProc           0x802'116d   0xc6a  Code  Gb  AutoRun.o [1]
+Tbl                      0x803'5b58   0x100  Data  Lc  unicode.o [1]
+TongCao2ScanProc         0x802'0f07   0x1a4  Code  Gb  AutoRun.o [1]
+TongCao2ScanProc::_lxstopdelay
+                        0x2000'8c4c     0x4  Data  Lc  AutoRun.o [1]
+ToolOutProc              0x802'32f5    0x5c  Code  Lc  AutoRun.o [1]
+ToolValveOutDelay       0x2000'8c34     0x4  Data  Lc  AutoRun.o [1]
+USART2_IRQHandler        0x802'd915     0x6  Code  Gb  serialbus.o [1]
+USBH_AllocPipe           0x802'e161    0x30  Code  Gb  usbh_pipes.o [1]
+USBH_BulkReceiveData     0x803'06f3    0x30  Code  Gb  usbh_ioreq.o [1]
+USBH_BulkSendData        0x803'06b1    0x42  Code  Gb  usbh_ioreq.o [1]
+USBH_ClosePipe           0x802'e14d    0x14  Code  Gb  usbh_pipes.o [1]
+USBH_ClrFeature          0x802'e357    0x30  Code  Gb  usbh_ctlreq.o [1]
+USBH_CtlReceiveData      0x803'0681    0x30  Code  Gb  usbh_ioreq.o [1]
+USBH_CtlReq              0x802'e56b    0x60  Code  Gb  usbh_ctlreq.o [1]
+USBH_CtlSendData         0x803'063f    0x42  Code  Gb  usbh_ioreq.o [1]
+USBH_CtlSendSetup        0x803'0615    0x2a  Code  Gb  usbh_ioreq.o [1]
+USBH_Delay               0x802'e103     0xc  Code  Gb  usbh_conf.o [1]
+USBH_Driver              0x803'6570    0x14  Data  Gb  usbh_diskio.o [1]
+USBH_FindInterface       0x802'bde9    0x72  Code  Gb  usbh_core.o [1]
+USBH_FreePipe            0x802'e191    0x2a  Code  Gb  usbh_pipes.o [1]
+USBH_GetDescriptor       0x802'e2ab    0x50  Code  Gb  usbh_ctlreq.o [1]
+USBH_GetFreePipe         0x802'e1bb    0x30  Code  Lc  usbh_pipes.o [1]
+USBH_GetNextDesc         0x802'e559    0x12  Code  Gb  usbh_ctlreq.o [1]
+USBH_Get_CfgDesc         0x802'e22b    0x3a  Code  Gb  usbh_ctlreq.o [1]
+USBH_Get_DevDesc         0x802'e1ed    0x3e  Code  Gb  usbh_ctlreq.o [1]
+USBH_Get_StringDesc      0x802'e265    0x46  Code  Gb  usbh_ctlreq.o [1]
+USBH_HID_ClassRequest    0x802'ebbf    0xa6  Code  Lc  usbh_hid.o [1]
+USBH_HID_GetASCIICode    0x802'dad7    0x28  Code  Gb  usbh_hid_keybd.o [1]
+USBH_HID_GetHIDDescriptor
+                         0x802'ed81    0x20  Code  Gb  usbh_hid.o [1]
+USBH_HID_GetHIDReportDescriptor
+                         0x802'ed61    0x20  Code  Gb  usbh_hid.o [1]
+USBH_HID_GetKeybdInfo    0x802'da1f    0x16  Code  Gb  usbh_hid_keybd.o [1]
+USBH_HID_GetReport       0x802'edd3    0x40  Code  Gb  usbh_hid.o [1]
+USBH_HID_InterfaceDeInit
+                         0x802'eb69    0x56  Code  Lc  usbh_hid.o [1]
+USBH_HID_InterfaceInit   0x802'e949   0x202  Code  Lc  usbh_hid.o [1]
+USBH_HID_KeybdDecode     0x802'da35    0xa2  Code  Lc  usbh_hid_keybd.o [1]
+USBH_HID_KeybdInit       0x802'd9c1    0x5e  Code  Gb  usbh_hid_keybd.o [1]
+USBH_HID_ParseHIDDesc    0x802'ee45    0x2a  Code  Lc  usbh_hid.o [1]
+USBH_HID_Process         0x802'ec65    0xd6  Code  Lc  usbh_hid.o [1]
+USBH_HID_SOFProcess      0x802'ed3b    0x26  Code  Lc  usbh_hid.o [1]
+USBH_HID_SetIdle         0x802'eda1    0x32  Code  Gb  usbh_hid.o [1]
+USBH_HID_SetProtocol     0x802'ee13    0x32  Code  Gb  usbh_hid.o [1]
+USBH_HandleControl       0x802'e5cb   0x242  Code  Lc  usbh_ctlreq.o [1]
+USBH_HandleEnum          0x802'c0f9   0x21c  Code  Lc  usbh_core.o [1]
+USBH_HandleSof           0x802'c331    0x20  Code  Lc  usbh_core.o [1]
+USBH_Init                0x802'bc21    0x5c  Code  Gb  usbh_core.o [1]
+USBH_InterruptReceiveData
+                         0x803'0723    0x32  Code  Gb  usbh_ioreq.o [1]
+USBH_LL_ClosePipe        0x802'df8d    0x42  Code  Gb  usbh_conf.o [1]
+USBH_LL_Connect          0x802'c351    0x22  Code  Gb  usbh_core.o [1]
+USBH_LL_Disconnect       0x802'c373    0x4c  Code  Gb  usbh_core.o [1]
+USBH_LL_DriverVBUS       0x802'e061    0x1c  Code  Gb  usbh_conf.o [1]
+USBH_LL_GetLastXferSize
+                         0x802'df05    0x14  Code  Gb  usbh_conf.o [1]
+USBH_LL_GetSpeed         0x802'de9d    0x2c  Code  Gb  usbh_conf.o [1]
+USBH_LL_GetToggle        0x802'e0bf    0x44  Code  Gb  usbh_conf.o [1]
+USBH_LL_GetURBState      0x802'e04d    0x14  Code  Gb  usbh_conf.o [1]
+USBH_LL_IncTimer         0x802'c31b    0x16  Code  Gb  usbh_core.o [1]
+USBH_LL_Init             0x802'dd61    0xa2  Code  Gb  usbh_conf.o [1]
+USBH_LL_OpenPipe         0x802'df19    0x74  Code  Gb  usbh_conf.o [1]
+USBH_LL_ResetPort        0x802'dec9    0x3c  Code  Gb  usbh_conf.o [1]
+USBH_LL_SetTimer         0x802'c315     0x6  Code  Gb  usbh_core.o [1]
+USBH_LL_SetToggle        0x802'e07d    0x42  Code  Gb  usbh_conf.o [1]
+USBH_LL_Start            0x802'de25    0x3c  Code  Gb  usbh_conf.o [1]
+USBH_LL_Stop             0x802'de61    0x3c  Code  Gb  usbh_conf.o [1]
+USBH_LL_SubmitURB        0x802'dfcf    0x7e  Code  Gb  usbh_conf.o [1]
+USBH_MSC_BOT_Abort       0x803'4c89    0x46  Code  Lc  usbh_msc_bot.o [1]
+USBH_MSC_BOT_Init        0x803'494b    0x24  Code  Gb  usbh_msc_bot.o [1]
+USBH_MSC_BOT_Process     0x803'496f   0x31a  Code  Gb  usbh_msc_bot.o [1]
+USBH_MSC_BOT_REQ_GetMaxLUN
+                         0x803'4925    0x26  Code  Gb  usbh_msc_bot.o [1]
+USBH_MSC_BOT_REQ_Reset   0x803'4901    0x24  Code  Gb  usbh_msc_bot.o [1]
+USBH_MSC_ClassRequest    0x803'3f31    0xa2  Code  Lc  usbh_msc.o [1]
+USBH_MSC_DecodeCSW       0x803'4ccf    0x62  Code  Lc  usbh_msc_bot.o [1]
+USBH_MSC_GetLUNInfo      0x803'4759    0x42  Code  Gb  usbh_msc.o [1]
+USBH_MSC_InterfaceDeInit
+                         0x803'3ed3    0x5e  Code  Lc  usbh_msc.o [1]
+USBH_MSC_InterfaceInit   0x803'3d35   0x19e  Code  Lc  usbh_msc.o [1]
+USBH_MSC_Process         0x803'3fd9   0x51c  Code  Lc  usbh_msc.o [1]
+USBH_MSC_RdWrProcess     0x803'44fb   0x1ec  Code  Lc  usbh_msc.o [1]
+USBH_MSC_Read            0x803'479b    0xb2  Code  Gb  usbh_msc.o [1]
+USBH_MSC_SCSI_Inquiry    0x803'4e6f   0x130  Code  Gb  usbh_msc_scsi.o [1]
+USBH_MSC_SCSI_Read       0x803'5113    0xb2  Code  Gb  usbh_msc_scsi.o [1]
+USBH_MSC_SCSI_ReadCapacity
+                         0x803'4daf    0xc0  Code  Gb  usbh_msc_scsi.o [1]
+USBH_MSC_SCSI_RequestSense
+                         0x803'4f9f    0xc2  Code  Gb  usbh_msc_scsi.o [1]
+USBH_MSC_SCSI_TestUnitReady
+                         0x803'4d3d    0x72  Code  Gb  usbh_msc_scsi.o [1]
+USBH_MSC_SCSI_Write      0x803'5061    0xb2  Code  Gb  usbh_msc_scsi.o [1]
+USBH_MSC_SOFProcess      0x803'44f5     0x6  Code  Lc  usbh_msc.o [1]
+USBH_MSC_UnitIsReady     0x803'4729    0x30  Code  Gb  usbh_msc.o [1]
+USBH_MSC_Write           0x803'484d    0xb2  Code  Gb  usbh_msc.o [1]
+USBH_OpenPipe            0x802'e10f    0x3e  Code  Gb  usbh_pipes.o [1]
+USBH_ParseCfgDesc        0x802'e3e5    0xea  Code  Lc  usbh_ctlreq.o [1]
+USBH_ParseDevDesc        0x802'e387    0x5e  Code  Lc  usbh_ctlreq.o [1]
+USBH_ParseEPDesc         0x802'e4f5    0x20  Code  Lc  usbh_ctlreq.o [1]
+USBH_ParseInterfaceDesc
+                         0x802'e4cf    0x26  Code  Lc  usbh_ctlreq.o [1]
+USBH_ParseStringDesc     0x802'e515    0x44  Code  Lc  usbh_ctlreq.o [1]
+USBH_Path               0x2000'8c7c     0x4  Data  Gb  fatfs.o [1]
+USBH_Process             0x802'be71   0x284  Code  Gb  usbh_core.o [1]
+USBH_RegisterClass       0x802'bcd7    0x60  Code  Gb  usbh_core.o [1]
+USBH_SelectInterface     0x802'bd37    0xac  Code  Gb  usbh_core.o [1]
+USBH_SetAddress          0x802'e2fb    0x30  Code  Gb  usbh_ctlreq.o [1]
+USBH_SetCfg              0x802'e32b    0x2c  Code  Gb  usbh_ctlreq.o [1]
+USBH_Start               0x802'be5b    0x16  Code  Gb  usbh_core.o [1]
+USBH_UserProcess_FS      0x802'ad39    0x70  Code  Lc  usb_host.o [1]
+USBH_UserProcess_FS_Keyboard
+                         0x802'ada9   0x124  Code  Lc  usb_host.o [1]
+USBH_UserProcess_FS_Keyboard::buf
+                        0x2000'025c     0x4  Data  Lc  usb_host.o [1]
+USBH_UserProcess_HS      0x802'aaa1    0xbc  Code  Lc  usb_host.o [1]
+USBH_UserProcess_HS_File
+                         0x802'ab5d   0x1dc  Code  Lc  usb_host.o [1]
+USBH_initialize          0x803'51c5     0x6  Code  Gb  usbh_diskio.o [1]
+USBH_ioctl               0x803'5397    0x84  Code  Gb  usbh_diskio.o [1]
+USBH_msc                0x2000'0220    0x20  Data  Gb  usbh_msc.o [1]
+USBH_read                0x803'51e9    0xce  Code  Gb  usbh_diskio.o [1]
+USBH_status              0x803'51cb    0x1e  Code  Gb  usbh_diskio.o [1]
+USBH_write               0x803'52b7    0xe0  Code  Gb  usbh_diskio.o [1]
+USB_CoreInit             0x803'1c39    0x66  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_CoreReset            0x803'1dc1    0x38  Code  Lc  stm32f4xx_ll_usb.o [1]
+USB_DisableGlobalInt     0x803'1cad     0xe  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_DoPing               0x803'255f    0x4a  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_DriveVbus            0x803'1f75    0x4e  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_EnableGlobalInt      0x803'1c9f     0xe  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_FlushRxFifo          0x803'1d19    0x20  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_FlushTxFifo          0x803'1cf5    0x24  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_GetCurrentFrame      0x803'1fd9     0xa  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_GetHostSpeed         0x803'1fc3    0x16  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_GetMode              0x803'1db9     0x8  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_HC_Halt              0x803'23d7   0x188  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_HC_Init              0x803'1fe3   0x1f6  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_HC_ReadInterrupt     0x803'23cd     0xa  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_HC_StartXfer         0x803'21d9   0x1da  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_HostInit             0x803'1df9    0xee  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_InitFSLSPClkSel      0x803'1eed    0x52  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_ReadInterrupts       0x803'1dad     0xc  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_ReadPacket           0x803'1d85    0x28  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_ResetPort            0x803'1f3f    0x36  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_SetCurrentMode       0x803'1cbb    0x3a  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_StopHost             0x803'25a9    0xbc  Code  Gb  stm32f4xx_ll_usb.o [1]
+USB_WritePacket          0x803'1d3d    0x48  Code  Gb  stm32f4xx_ll_usb.o [1]
+Uart1Rx_Channel         0x2000'8cb8     0x4  Data  Gb  serialbus.o [1]
+Uart1Rx_DMA             0x2000'8cb0     0x4  Data  Gb  serialbus.o [1]
+Uart1Rx_Stream          0x2000'8cb4     0x4  Data  Gb  serialbus.o [1]
+Uart1Tx_Channel         0x2000'8cac     0x4  Data  Gb  serialbus.o [1]
+Uart1Tx_DMA             0x2000'8ca4     0x4  Data  Gb  serialbus.o [1]
+Uart1Tx_Stream          0x2000'8ca8     0x4  Data  Gb  serialbus.o [1]
+Uart6CheckRecvEnd        0x802'd891    0x7c  Code  Gb  serialbus.o [1]
+Uart6CheckRecvEnd::delay
+                        0x2000'8cd4     0x4  Data  Lc  serialbus.o [1]
+Uart6CheckSendEnd        0x802'd881    0x10  Code  Gb  serialbus.o [1]
+Uart6DMAReceive          0x802'd80d    0x74  Code  Gb  serialbus.o [1]
+Uart6DMASend             0x802'd7a5    0x68  Code  Gb  serialbus.o [1]
+Uart6Rx_Channel         0x2000'8cd0     0x4  Data  Gb  serialbus.o [1]
+Uart6Rx_DMA             0x2000'8cc8     0x4  Data  Gb  serialbus.o [1]
+Uart6Rx_Stream          0x2000'8ccc     0x4  Data  Gb  serialbus.o [1]
+Uart6Tx_Channel         0x2000'8cc4     0x4  Data  Gb  serialbus.o [1]
+Uart6Tx_DMA             0x2000'8cbc     0x4  Data  Gb  serialbus.o [1]
+Uart6Tx_Stream          0x2000'8cc0     0x4  Data  Gb  serialbus.o [1]
+Uart6_Modbus_CheckData   0x803'3b33   0x126  Code  Gb  ModbusSlave.o [1]
+UartSpeed                0x802'd475    0x7c  Code  Lc  serialbus.o [1]
+UsageFault_Handler       0x803'5ed1     0x2  Code  Gb  stm32f4xx_it.o [1]
+UseProbeFlag            0x2000'8d4c     0x1  Data  Gb  AutoRun.o [1]
+UserAlarmProc            0x802'9e81   0x414  Code  Gb  Alarm.o [1]
+UserCurrentParam        0x2000'8cf4     0x4  Data  Gb  usermemory.o [1]
+UserParam               0x2000'8ce8     0x4  Data  Gb  usermemory.o [1]
+UserProbeCheck           0x802'83c1    0x88  Code  Gb  Touch.o [1]
+VariableInit_Code        0x802'0bd9    0x2e  Code  Gb  AutoRun.o [1]
+VariableInit_Hole        0x802'08d3   0x13a  Code  Gb  AutoRun.o [1]
+VariableInit_Int         0x802'0881    0x52  Code  Gb  AutoRun.o [1]
+VariableInit_Slot        0x802'0a0d   0x1cc  Code  Gb  AutoRun.o [1]
+VerControl               0x802'6e91    0x18  Code  Gb  usermemory.o [1]
+W25QXX_BUFFER           0x2000'532c  0x1000  Data  Gb  w25qxx.o [1]
+W25QXX_Erase_Sector      0x802'ba91    0x5a  Code  Gb  w25qxx.o [1]
+W25QXX_Init              0x802'b769    0x50  Code  Gb  w25qxx.o [1]
+W25QXX_Read              0x802'b84f    0x72  Code  Gb  w25qxx.o [1]
+W25QXX_ReadID            0x802'b813    0x3c  Code  Gb  w25qxx.o [1]
+W25QXX_ReadSR            0x802'b7b9    0x46  Code  Gb  w25qxx.o [1]
+W25QXX_TYPE             0x2000'8d3a     0x2  Data  Gb  w25qxx.o [1]
+W25QXX_Wait_Busy         0x802'baeb     0xe  Code  Gb  w25qxx.o [1]
+W25QXX_Write             0x802'b995    0xfc  Code  Gb  w25qxx.o [1]
+W25QXX_Write_Enable      0x802'b7ff    0x14  Code  Gb  w25qxx.o [1]
+W25QXX_Write_NoCheck     0x802'b939    0x5c  Code  Gb  w25qxx.o [1]
+W25QXX_Write_Page        0x802'b8c1    0x78  Code  Gb  w25qxx.o [1]
+Winfos                  0x2000'83a4   0x190  Data  Lc  AutoRun.o [1]
+Work1StopCheck           0x802'026d    0xfe  Code  Gb  AutoRun.o [1]
+Work2StopCheck           0x802'036b    0xfc  Code  Gb  AutoRun.o [1]
+Work3StopCheck           0x802'0467    0xfc  Code  Gb  AutoRun.o [1]
+Work4StopCheck           0x802'0563    0xfc  Code  Gb  AutoRun.o [1]
+WorkModeSelect           0x802'8545   0x154  Code  Gb  Touch.o [1]
+WorkingFlag             0x2000'8d22     0x2  Data  Gb  AutoRun.o [1]
+Write24C04_16bit         0x802'b62f    0x5c  Code  Gb  iicbus.o [1]
+Write24C04_32bit         0x802'b68b    0x64  Code  Gb  iicbus.o [1]
+Write24C04_nByte         0x802'b5cf    0x60  Code  Gb  iicbus.o [1]
+WriteOutput              0x803'31e5    0x10  Code  Gb  inout.o [1]
+WriteOutput_Convert      0x803'2ed9    0xb6  Code  Gb  inout.o [1]
+XAxis_PWMProc            0x802'50cf   0x1f2  Code  Gb  ServoStep.o [1]
+XEncodeDivide           0x2000'8d18     0x2  Data  Gb  Action.o [1]
+XGearRatio              0x2000'8bc8     0x8  Data  Gb  Action.o [1]
+XWorkOrignPos           0x2000'8c24     0x4  Data  Gb  AutoRun.o [1]
+YAxis_PWMProc            0x802'52c1   0x1f2  Code  Gb  ServoStep.o [1]
+YGearRatio              0x2000'8bd0     0x8  Data  Gb  Action.o [1]
+__aeabi_cdcmpeq          0x802'7825          Code  Gb  DblCmpEq.o [3]
+__aeabi_d2iz             0x802'7585          Code  Gb  DblToS32.o [3]
+__aeabi_dadd             0x802'7409          Code  Gb  DblAdd.o [3]
+__aeabi_ddiv             0x802'75c1          Code  Gb  DblDiv.o [3]
+__aeabi_dmul             0x802'7265          Code  Gb  DblMul.o [3]
+__aeabi_dsub             0x802'bb3d          Code  Gb  DblSub.o [3]
+__aeabi_i2d              0x802'7241          Code  Gb  S32ToDbl.o [3]
+__aeabi_memclr4          0x802'7239          Code  Gb  ABImemclr4.o [4]
+__aeabi_memcpy           0x802'a96d          Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy4          0x802'a98d          Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy8          0x802'a98d          Code  Gb  ABImemcpy.o [4]
+__aeabi_memset           0x802'5d11          Code  Gb  ABImemset.o [4]
+__aeabi_ui2d             0x802'7809          Code  Gb  U32ToDbl.o [3]
+__cmain                  0x803'6281          Code  Gb  cmain.o [4]
+__data_GetMemChunk       0x803'3c95    0x2c  Code  Gb  xgetmemchunk.o [2]
+__data_GetMemChunk::start
+                        0x2000'8d14     0x4  Data  Lc  xgetmemchunk.o [2]
+__exit                   0x803'3d21    0x14  Code  Gb  exit.o [5]
+__iar_Memset             0x802'5d11          Code  Gb  ABImemset.o [4]
+__iar_Memset4_word       0x802'bb09          Code  Gb  ABImemset48.o [4]
+__iar_Memset8_word       0x802'bb09          Code  Gb  ABImemset48.o [4]
+__iar_Memset_word        0x802'5d19          Code  Gb  ABImemset.o [4]
+__iar_copy_init3         0x803'5ef5    0x2c  Code  Gb  copy_init3.o [4]
+__iar_dadd               0x802'bb4d          Code  Gb  DblSub.o [3]
+__iar_data_init3         0x803'5fc1    0x28  Code  Gb  data_init.o [4]
+__iar_dlfree             0x803'1733   0x4f6  Code  Gb  dlmalloc.o [2]
+__iar_dlmalloc           0x803'147d   0x2b6  Code  Gb  dlmalloc.o [2]
+__iar_dsub               0x802'7419          Code  Gb  DblAdd.o [3]
+__iar_dsubStart          0x802'742b          Code  Gb  DblAdd.o [3]
+__iar_init_vfp           0x803'6031          Code  Gb  fpinit_M.o [3]
+__iar_program_start      0x803'6731          Code  Gb  cstartup_M.o [4]
+__iar_zero_init3         0x802'5d77    0x3a  Code  Gb  zero_init3.o [4]
+__low_level_init         0x803'629f     0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x802'0000          Data  Gb  startup_stm32f407xx.o [1]
+_call_main               0x803'628d          Code  Gb  cmain.o [4]
+_exit                    0x803'62a9          Code  Gb  cexit.o [4]
+_gm_                    0x2000'803c   0x1d8  Data  Lc  dlmalloc.o [2]
+_main                    0x803'629b          Code  Gb  cmain.o [4]
+abort                    0x803'3c8d     0x6  Code  Gb  abort.o [2]
+add_segment              0x803'0b1d   0x1f2  Code  Lc  dlmalloc.o [2]
+bpq_alarm_time          0x2000'8c14     0x4  Data  Gb  Alarm.o [1]
+buffer                  0x2000'7e3c   0x200  Data  Lc  usermemory.o [1]
+buffertmp               0x2000'432c  0x1000  Data  Lc  usermemory.o [1]
+cAxisAlarmState         0x1000'464e     0x2  Data  Gb  ServoStep.o [1]
+cAxisDriveState         0x1000'464c     0x2  Data  Gb  ServoStep.o [1]
+cAxisManuRunState       0x2000'8d32     0x2  Data  Gb  Manual.o [1]
+cAxisRunState           0x2000'8d1a     0x2  Data  Gb  Action.o [1]
+cCaoMoveDir             0x2000'8d49     0x1  Data  Lc  AutoRun.o [1]
+cChaXiaoBackup          0x2000'8d1c     0x2  Data  Gb  Action.o [1]
+cDataArea               0x1000'2000  0x2000  Data  Gb  usermemory.o [1]
+cDingHoleScanStep       0x2000'8d50     0x1  Data  Lc  AutoRun.o [1]
+cDingHoleWorkStep       0x2000'8d4f     0x1  Data  Lc  AutoRun.o [1]
+cDrillRunStep           0x2000'8d4e     0x1  Data  Gb  AutoRun.o [1]
+cDuanCaoRunStep         0x2000'8d54     0x1  Data  Lc  AutoRun.o [1]
+cInputVal               0x2000'8bd8     0x8  Data  Gb  inout.o [1]
+cMidleCoil              0x1000'44b0    0x80  Data  Gb  usermemory.o [1]
+cOldInputVal            0x2000'8be0     0x8  Data  Gb  inout.o [1]
+cOutputVal              0x2000'8bf0     0x8  Data  Gb  inout.o [1]
+cRealInputVal           0x2000'8be8     0x8  Data  Gb  inout.o [1]
+cRealOutputVal          0x2000'8bf8     0x8  Data  Gb  inout.o [1]
+cResumeStep             0x2000'8d3c     0x1  Data  Gb  Action.o [1]
+cRunStep                0x2000'8d42     0x1  Data  Gb  AutoRun.o [1]
+cScanDrillRunStep       0x2000'8d4d     0x1  Data  Gb  AutoRun.o [1]
+cTongCao2RunStep        0x2000'8d53     0x1  Data  Lc  AutoRun.o [1]
+cTongCao2ScanStep       0x2000'8d52     0x1  Data  Gb  AutoRun.o [1]
+cTongCaoStartFlag       0x2000'8d51     0x1  Data  Lc  AutoRun.o [1]
+cToolOutFlag            0x2000'8d56     0x1  Data  Gb  AutoRun.o [1]
+cWorkRunStep            0x2000'8d43     0x1  Data  Gb  AutoRun.o [1]
+cWorkScanStep           0x2000'8d44     0x1  Data  Gb  AutoRun.o [1]
+cXRstStep               0x2000'8d34     0x2  Data  Gb  Manual.o [1]
+cYRstStep               0x2000'8d36     0x2  Data  Gb  Manual.o [1]
+check_fs                 0x802'cd61    0x7e  Code  Lc  ff.o [1]
+chk_chr                  0x802'c48d    0x1a  Code  Lc  ff.o [1]
+clmt_clust               0x802'c605    0x40  Code  Lc  ff.o [1]
+clust2sect               0x802'c4e5    0x22  Code  Gb  ff.o [1]
+cmp_lfn                  0x802'c7ef    0xa4  Code  Lc  ff.o [1]
+create_name              0x802'c9e3   0x282  Code  Lc  ff.o [1]
+currentHoleNum          0x2000'8d4a     0x1  Data  Gb  AutoRun.o [1]
+currentWorkHoleNum      0x2000'8d4b     0x1  Data  Gb  AutoRun.o [1]
+delay_ms                 0x803'0603    0x12  Code  Gb  delay.o [1]
+delay_us                 0x803'05b3    0x32  Code  Gb  delay.o [1]
+dir_find                 0x802'c8b3   0x130  Code  Lc  ff.o [1]
+dir_next                 0x802'c711    0xb6  Code  Lc  ff.o [1]
+dir_sdi                  0x802'c645    0xcc  Code  Lc  ff.o [1]
+disk                    0x2000'8bb4     0xc  Data  Gb  ff_gen_drv.o [1]
+disk_initialize          0x802'e839    0x38  Code  Gb  diskio.o [1]
+disk_read                0x802'e871    0x34  Code  Gb  diskio.o [1]
+disk_status              0x802'e819    0x20  Code  Gb  diskio.o [1]
+duancaodirflag          0x2000'8d2e     0x2  Data  Lc  AutoRun.o [1]
+dwTickCount             0x2000'8cd8     0x4  Data  Gb  timer.o [1]
+endposition             0x2000'8c44     0x4  Data  Lc  AutoRun.o [1]
+exit                     0x803'62a3     0x4  Code  Gb  exit.o [2]
+f_close                  0x802'd459    0x1c  Code  Gb  ff.o [1]
+f_mount                  0x802'd12b    0x60  Code  Gb  ff.o [1]
+f_open                   0x802'd1a5    0xde  Code  Gb  ff.o [1]
+f_read                   0x802'd283   0x1d6  Code  Gb  ff.o [1]
+ff_convert               0x802'e8a9    0x60  Code  Gb  unicode.o [1]
+ff_wtoupper              0x802'e909    0x34  Code  Gb  unicode.o [1]
+ff_wtoupper::tbl_lower   0x803'5434   0x1e0  Data  Lc  unicode.o [1]
+ff_wtoupper::tbl_upper   0x803'5614   0x1e0  Data  Lc  unicode.o [1]
+fifo_init                0x802'ee6f    0x12  Code  Gb  usbh_hid.o [1]
+fifo_read                0x802'ee81    0x5e  Code  Gb  usbh_hid.o [1]
+fifo_write               0x802'eedf    0x70  Code  Gb  usbh_hid.o [1]
+find_volume              0x802'cddf   0x300  Code  Lc  ff.o [1]
+flgSgn                  0x2000'8d57     0x1  Data  Gb  Encode.o [1]
+flgSgnOld               0x2000'8d58     0x1  Data  Gb  Encode.o [1]
+follow_path              0x802'cc65    0xa8  Code  Lc  ff.o [1]
+free                     0x803'1c35     0x4  Code  Gb  heaptramp0.o [2]
+fsrc                    0x2000'7a1c   0x220  Data  Lc  usb_host.o [1]
+getDepthMove             0x802'60fd    0x5c  Code  Gb  Gcode.o [1]
+getDeviceType            0x802'b561    0x14  Code  Gb  iicbus.o [1]
+getEncoderCount          0x802'68ed     0x6  Code  Gb  Encode.o [1]
+getGcodeSrcBuff          0x802'aa99     0x6  Code  Gb  usb_host.o [1]
+getMemAddr               0x802'6f4d    0x20  Code  Gb  usermemory.o [1]
+getPosMove               0x802'6099    0x5c  Code  Gb  Gcode.o [1]
+get_I2C_RW_Addr          0x802'b575    0x5a  Code  Gb  iicbus.o [1]
+get_fat                  0x802'c507    0xfe  Code  Gb  ff.o [1]
+get_ldnumber             0x802'cd0d    0x54  Code  Lc  ff.o [1]
+hUsbHostFS              0x2000'6ef8   0x3cc  Data  Gb  usb_host.o [1]
+hUsbHostHS              0x2000'6b2c   0x3cc  Data  Gb  usb_host.o [1]
+hhcd_USB_OTG_FS         0x2000'755c   0x298  Data  Gb  usbh_conf.o [1]
+hhcd_USB_OTG_HS         0x2000'72c4   0x298  Data  Gb  usbh_conf.o [1]
+hw_iic_bus_init          0x802'b3c9    0x88  Code  Gb  iicbus.o [1]
+hw_serial1_init          0x802'd4f1   0x120  Code  Gb  serialbus.o [1]
+hw_serial6_init          0x802'd611   0x10e  Code  Lc  serialbus.o [1]
+hw_serial_bus_init       0x802'd71f    0x14  Code  Gb  serialbus.o [1]
+hw_spi_bus_init          0x802'db39    0xb2  Code  Gb  spibus.o [1]
+imp_0_key_array          0x803'6220    0x20  Data  Lc  usbh_hid_keybd.o [1]
+imp_0_lalt               0x803'6160    0x20  Data  Lc  usbh_hid_keybd.o [1]
+imp_0_lctrl              0x803'6120    0x20  Data  Lc  usbh_hid_keybd.o [1]
+imp_0_lgui               0x803'6180    0x20  Data  Lc  usbh_hid_keybd.o [1]
+imp_0_lshift             0x803'6140    0x20  Data  Lc  usbh_hid_keybd.o [1]
+imp_0_ralt               0x803'61e0    0x20  Data  Lc  usbh_hid_keybd.o [1]
+imp_0_rctrl              0x803'61a0    0x20  Data  Lc  usbh_hid_keybd.o [1]
+imp_0_rgui               0x803'6200    0x20  Data  Lc  usbh_hid_keybd.o [1]
+imp_0_rshift             0x803'61c0    0x20  Data  Lc  usbh_hid_keybd.o [1]
+infos                   0x2000'8214   0x190  Data  Lc  AutoRun.o [1]
+init_mparams             0x803'076f    0x32  Code  Lc  dlmalloc.o [2]
+init_top                 0x803'07a1    0x36  Code  Lc  dlmalloc.o [2]
+keybd_info              0x2000'8ba4    0x10  Data  Gb  usbh_hid_keybd.o [1]
+keybd_report_data       0x2000'8c00     0x8  Data  Gb  usbh_hid_keybd.o [1]
+ld_clust                 0x802'c7c7    0x28  Code  Lc  ff.o [1]
+main                     0x803'0501    0x7e  Code  Gb  main.o [1]
+mem_cmp                  0x802'c467    0x26  Code  Lc  ff.o [1]
+mem_cpy                  0x802'c435    0x1c  Code  Lc  ff.o [1]
+mem_set                  0x802'c451    0x16  Code  Lc  ff.o [1]
+modbus_slave_exit_app    0x803'39df    0x20  Code  Lc  ModbusSlave.o [1]
+modbus_slave_test_com    0x803'39bd    0x22  Code  Lc  ModbusSlave.o [1]
+move_window              0x802'c4a7    0x3e  Code  Lc  ff.o [1]
+mparams                 0x2000'8b7c    0x18  Data  Lc  dlmalloc.o [2]
+multiTable               0x803'5fe8    0x24  Data  Lc  Gcode.o [1]
+offsetRead              0x2000'8c8c     0x4  Data  Lc  Gcode.o [1]
+prepend_alloc            0x803'07d7   0x346  Code  Lc  dlmalloc.o [2]
+printf                   0x802'd90d     0x8  Code  Gb  serialbus.o [1]
+recvBuf6                0x2000'632c   0x400  Data  Lc  ModbusSlave.o [1]
+retUSBH                 0x2000'8d59     0x1  Data  Gb  fatfs.o [1]
+scratch                 0x2000'7c3c   0x200  Data  Lc  usbh_diskio.o [1]
+segment_holding          0x803'0755    0x1a  Code  Lc  dlmalloc.o [2]
+sendBuf6                0x2000'672c   0x400  Data  Lc  ModbusSlave.o [1]
+setEncoderCount          0x802'68f3     0x6  Code  Gb  Encode.o [1]
+slot_flg_step           0x2000'8d5a     0x1  Data  Gb  Gcode.o [1]
+step6                   0x2000'0254     0x4  Data  Lc  ModbusSlave.o [1]
+strlen                   0x802'aa15          Code  Gb  strlen.o [4]
+sum_sfn                  0x802'c893    0x20  Code  Lc  ff.o [1]
+sys_alloc                0x803'0d15   0x164  Code  Lc  dlmalloc.o [2]
+sys_trim                 0x803'0e79    0x64  Code  Lc  dlmalloc.o [2]
+systemCoreClock         0x2000'0250     0x4  Data  Lc  delay.o [1]
+tUAxisStepper           0x1000'4614    0x34  Data  Gb  ServoStep.o [1]
+tXAxisStepper           0x1000'4578    0x34  Data  Gb  ServoStep.o [1]
+tYAxisStepper           0x1000'45ac    0x34  Data  Gb  ServoStep.o [1]
+tZAxisStepper           0x1000'45e0    0x34  Data  Gb  ServoStep.o [1]
+tim7_temp               0x2000'0261     0x1  Data  Gb  Encode.o [1]
+tmalloc_large            0x803'0ee9   0x386  Code  Lc  dlmalloc.o [2]
+tmalloc_small            0x803'126f   0x200  Code  Lc  dlmalloc.o [2]
+uart6DMARevLen          0x2000'8ca0     0x4  Data  Lc  serialbus.o [1]
+uart6RequireLength      0x2000'8c9c     0x4  Data  Lc  serialbus.o [1]
+ulBoardEnd              0x2000'8c3c     0x4  Data  Lc  AutoRun.o [1]
+ulBoardHead             0x2000'8c38     0x4  Data  Gb  AutoRun.o [1]
+ulEncoderCount          0x1000'4648     0x4  Data  Lc  Encode.o [1]
+usbdiskfs               0x2000'77f4   0x228  Data  Gb  usb_host.o [1]
+validate                 0x802'd0e5    0x46  Code  Lc  ff.o [1]
+
+
+[1] = F:\www\plc19020_ckz\Debug\Obj
+[2] = dl7M_tln.a
+[3] = m7M_tls.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  87 612 bytes of readonly  code memory
+   5 300 bytes of readonly  data memory
+  62 383 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

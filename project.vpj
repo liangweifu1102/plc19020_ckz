@@ -1,0 +1,480 @@
+<!DOCTYPE Project SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpj.dtd">
+<Project
+    Version="10.0"
+    VendorName="SlickEdit"
+    TemplateName="Other C/C++"
+    WorkingDir=".">
+    <Config
+        Name="Debug"
+        Type="cpp"
+        DebugCallbackName="gdb"
+        OutputFile="%bdproject"
+        CompilerConfigName="Latest Version">
+        <Menu>
+            <Target
+                Name="Compile"
+                MenuCaption="&amp;Compile"
+                CaptureOutputWith="ProcessBuffer"
+                OutputExts="*.o"
+                SaveOption="SaveCurrent"
+                RunFromDir="%rw">
+                <Exec CmdLine='cc -c -g %i %defd -o "%bd%n.o" "%f"'/>
+            </Target>
+            <Target
+                Name="Link"
+                MenuCaption="&amp;Link">
+                <Exec CmdLine='cc -g -o "%o" %f %libs'/>
+            </Target>
+            <Target
+                Name="Build"
+                MenuCaption="&amp;Build"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveWorkspaceFiles"
+                RunFromDir="%rw">
+                <Exec CmdLine='"%(VSLICKBIN1)vsbuild" build "%w" "%r"'/>
+            </Target>
+            <Target
+                Name="Rebuild"
+                MenuCaption="&amp;Rebuild"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveWorkspaceFiles"
+                RunFromDir="%rw">
+                <Exec CmdLine='"%(VSLICKBIN1)vsbuild" rebuild "%w" "%r"'/>
+            </Target>
+            <Target
+                Name="Debug"
+                MenuCaption="&amp;Debug"
+                SaveOption="SaveNone"
+                BuildFirst="1"
+                CaptureOutputWith="ProcessBuffer"
+                RunFromDir="%rw">
+                <Exec CmdLine='vsdebugio -prog "%o"'/>
+            </Target>
+            <Target
+                Name="Execute"
+                MenuCaption="E&amp;xecute"
+                SaveOption="SaveNone"
+                BuildFirst="1"
+                CaptureOutputWith="ProcessBuffer"
+                RunFromDir="%rw">
+                <Exec CmdLine='"%o"'/>
+            </Target>
+        </Menu>
+    </Config>
+    <Config
+        Name="Release"
+        Type="cpp"
+        DebugCallbackName="gdb"
+        OutputFile="%bdproject"
+        CompilerConfigName="Latest Version">
+        <Menu>
+            <Target
+                Name="Compile"
+                MenuCaption="&amp;Compile"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveCurrent"
+                OutputExts="*.o"
+                RunFromDir="%rw">
+                <Exec CmdLine='cc -c -O %i %defd -o "%bd%n.o" "%f"'/>
+            </Target>
+            <Target
+                Name="Link"
+                MenuCaption="&amp;Link">
+                <Exec CmdLine='cc -O -o "%o" %f %libs'/>
+            </Target>
+            <Target
+                Name="Build"
+                MenuCaption="&amp;Build"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveWorkspaceFiles"
+                RunFromDir="%rw">
+                <Exec CmdLine='"%(VSLICKBIN1)vsbuild" build "%w" "%r"'/>
+            </Target>
+            <Target
+                Name="Rebuild"
+                MenuCaption="&amp;Rebuild"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveWorkspaceFiles"
+                RunFromDir="%rw">
+                <Exec CmdLine='"%(VSLICKBIN1)vsbuild" rebuild "%w" "%r"'/>
+            </Target>
+            <Target
+                Name="Debug"
+                MenuCaption="&amp;Debug"
+                SaveOption="SaveNone"
+                BuildFirst="1"
+                CaptureOutputWith="ProcessBuffer"
+                RunFromDir="%rw">
+                <Exec CmdLine='vsdebugio -prog "%o"'/>
+            </Target>
+            <Target
+                Name="Execute"
+                MenuCaption="E&amp;xecute"
+                SaveOption="SaveNone"
+                BuildFirst="1"
+                CaptureOutputWith="ProcessBuffer"
+                RunFromDir="%rw">
+                <Exec CmdLine='"%o"'/>
+            </Target>
+        </Menu>
+    </Config>
+    <Rules Name="Compile">
+        <Rule
+            InputExts="*.s"
+            OutputExts="*.o"
+            LinkObject="1">
+            <Exec CmdLine='as -o "%bd%n.o" "%f"'/>
+        </Rule>
+    </Rules>
+    <CustomFolders>
+        <Folder
+            Name="Source Files"
+            Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.scala;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm;*.go;*.groovy;*.gsh"
+            GUID="{CFF03A21-C2A2-4C58-E39A-B97F0F1F7299}"></Folder>
+        <Folder
+            Name="Header Files"
+            Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.h++;*.inc;*.sh;*.cpy;*.if"
+            GUID="{002996DA-2D79-484B-8EDB-6227A2A7AA8D}"></Folder>
+        <Folder
+            Name="Resource Files"
+            Filters="*.ico;*.cur;*.dlg"
+            GUID="{BC7657C2-8936-4AA8-AFF7-C08AE7FE18BD}"/>
+        <Folder
+            Name="Bitmaps"
+            Filters="*.bmp"
+            GUID="{A5CA5040-6D3A-4882-86BE-A4E3FFFE5992}"/>
+        <Folder
+            Name="Other Files"
+            Filters=""
+            GUID="{8F09DCE9-4A87-4076-795A-F8AAB0E151B9}"></Folder>
+    </CustomFolders>
+    <Files AutoFolders="DirectoryView">
+        <Folder Name="Src">
+            <Folder Name="app">
+                <F N="Src/app/Action.c"/>
+                <F N="Src/app/Action.h"/>
+                <F N="Src/app/Alarm.c"/>
+                <F N="Src/app/AutoRun.c"/>
+                <F N="Src/app/AutoRun.h"/>
+                <F N="Src/app/config.h"/>
+                <F N="Src/app/Gcode.c"/>
+                <F N="Src/app/gcode.h"/>
+                <F N="Src/app/main.c"/>
+                <F N="Src/app/Manual.c"/>
+                <F N="Src/app/Manual.h"/>
+                <F N="Src/app/Touch.c"/>
+                <F N="Src/app/touch.h"/>
+                <F N="Src/app/usermemory.c"/>
+                <F N="Src/app/usermemory.h"/>
+            </Folder>
+            <Folder Name="cm">
+                <F N="Src/cm/arm_common_tables.h"/>
+                <F N="Src/cm/arm_const_structs.h"/>
+                <F N="Src/cm/arm_math.h"/>
+                <F N="Src/cm/cmsis_armcc.h"/>
+                <F N="Src/cm/cmsis_armcc_V6.h"/>
+                <F N="Src/cm/cmsis_gcc.h"/>
+                <F N="Src/cm/core_cm0.h"/>
+                <F N="Src/cm/core_cm0plus.h"/>
+                <F N="Src/cm/core_cm3.h"/>
+                <F N="Src/cm/core_cm4.h"/>
+                <F N="Src/cm/core_cm4_simd.h"/>
+                <F N="Src/cm/core_cm7.h"/>
+                <F N="Src/cm/core_cmFunc.h"/>
+                <F N="Src/cm/core_cmInstr.h"/>
+                <F N="Src/cm/core_cmSimd.h"/>
+                <F N="Src/cm/core_sc000.h"/>
+                <F N="Src/cm/core_sc300.h"/>
+                <F N="Src/cm/misc.h"/>
+            </Folder>
+            <Folder Name="FatFs">
+                <Folder Name="drivers">
+                    <F N="Src/FatFs/drivers/sd_diskio.c"/>
+                    <F N="Src/FatFs/drivers/sd_diskio.h"/>
+                    <F N="Src/FatFs/drivers/sdram_diskio.c"/>
+                    <F N="Src/FatFs/drivers/sdram_diskio.h"/>
+                    <F N="Src/FatFs/drivers/sram_diskio.c"/>
+                    <F N="Src/FatFs/drivers/sram_diskio.h"/>
+                    <F N="Src/FatFs/drivers/usbh_diskio.c"/>
+                    <F N="Src/FatFs/drivers/usbh_diskio.h"/>
+                </Folder>
+                <Folder Name="option">
+                    <F N="Src/FatFs/option/cc932.c"/>
+                    <F N="Src/FatFs/option/cc936.c"/>
+                    <F N="Src/FatFs/option/cc949.c"/>
+                    <F N="Src/FatFs/option/cc950.c"/>
+                    <F N="Src/FatFs/option/ccsbcs.c"/>
+                    <F N="Src/FatFs/option/syscall.c"/>
+                    <F N="Src/FatFs/option/unicode.c"/>
+                </Folder>
+                <F N="Src/FatFs/diskio.c"/>
+                <F N="Src/FatFs/diskio.h"/>
+                <F N="Src/FatFs/ff.c"/>
+                <F N="Src/FatFs/ff.h"/>
+                <F N="Src/FatFs/ff_gen_drv.c"/>
+                <F N="Src/FatFs/ff_gen_drv.h"/>
+                <F N="Src/FatFs/integer.h"/>
+            </Folder>
+            <Folder Name="hardware">
+                <F N="Src/hardware/anglogbus.c"/>
+                <F N="Src/hardware/anglogbus.h"/>
+                <F N="Src/hardware/board.c"/>
+                <F N="Src/hardware/board.h"/>
+                <F N="Src/hardware/Encode.c"/>
+                <F N="Src/hardware/encode.h"/>
+                <F N="Src/hardware/iicbus.c"/>
+                <F N="Src/hardware/iicbus.h"/>
+                <F N="Src/hardware/inout.c"/>
+                <F N="Src/hardware/inout.h"/>
+                <F N="Src/hardware/led.c"/>
+                <F N="Src/hardware/pwm.c"/>
+                <F N="Src/hardware/pwm.h"/>
+                <F N="Src/hardware/serialbus.c"/>
+                <F N="Src/hardware/serialbus.h"/>
+                <F N="Src/hardware/ServerDrv.c"/>
+                <F N="Src/hardware/serverdrv.h"/>
+                <F N="Src/hardware/ServoStep.c"/>
+                <F N="Src/hardware/ServoStep.h"/>
+                <F N="Src/hardware/spibus.c"/>
+                <F N="Src/hardware/spibus.h"/>
+                <F N="Src/hardware/timer.c"/>
+                <F N="Src/hardware/timer.h"/>
+                <F N="Src/hardware/w25qxx.c"/>
+                <F N="Src/hardware/w25qxx.h"/>
+            </Folder>
+            <Folder Name="jlink_rtt">
+                <F N="Src/jlink_rtt/SEGGER_RTT.c"/>
+                <F N="Src/jlink_rtt/SEGGER_RTT.h"/>
+                <F N="Src/jlink_rtt/SEGGER_RTT_Conf.h"/>
+                <F N="Src/jlink_rtt/SEGGER_RTT_printf.c"/>
+                <F N="Src/jlink_rtt/SEGGER_RTT_Syscalls_IAR.c"/>
+            </Folder>
+            <Folder Name="modbus">
+                <F N="Src/modbus/ModbusSlave.c"/>
+                <F N="Src/modbus/ModbusSlave.h"/>
+            </Folder>
+            <Folder Name="mylib">
+                <F N="Src/mylib/delay.c"/>
+                <F N="Src/mylib/delay.h"/>
+                <F N="Src/mylib/stmflash.c"/>
+                <F N="Src/mylib/stmflash.h"/>
+                <F N="Src/mylib/sys.c"/>
+                <F N="Src/mylib/sys.h"/>
+                <F N="Src/mylib/typedefine.h"/>
+            </Folder>
+            <Folder Name="stm32f4lib">
+                <Folder Name="Inc">
+                    <Folder Name="Legacy">
+                        <F N="Src/stm32f4lib/Inc/Legacy/stm32_hal_legacy.h"/>
+                    </Folder>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_adc.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_adc_ex.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_can.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_cec.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_cortex.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_crc.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_cryp.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_cryp_ex.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_dac.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_dac_ex.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_dcmi.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_dcmi_ex.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_def.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_dfsdm.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_dma.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_dma2d.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_dma_ex.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_dsi.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_eth.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_flash.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_flash_ex.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_flash_ramfunc.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_fmpi2c.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_fmpi2c_ex.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_gpio.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_gpio_ex.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_hash.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_hash_ex.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_hcd.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_i2c.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_i2c_ex.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_i2s.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_i2s_ex.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_irda.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_iwdg.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_lptim.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_ltdc.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_ltdc_ex.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_nand.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_nor.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_pccard.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_pcd.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_pcd_ex.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_pwr.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_pwr_ex.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_qspi.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_rcc.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_rcc_ex.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_rng.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_rtc.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_rtc_ex.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_sai.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_sai_ex.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_sd.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_sdram.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_smartcard.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_spdifrx.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_spi.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_sram.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_tim.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_tim_ex.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_uart.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_usart.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_hal_wwdg.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_ll_fmc.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_ll_fsmc.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_ll_sdmmc.h"/>
+                    <F N="Src/stm32f4lib/Inc/stm32f4xx_ll_usb.h"/>
+                </Folder>
+                <Folder Name="Src">
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_adc.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_adc_ex.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_can.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_cec.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_cortex.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_crc.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_cryp.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_cryp_ex.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_dac.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_dac_ex.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_dcmi.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_dcmi_ex.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_dfsdm.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_dma.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_dma2d.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_dma_ex.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_dsi.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_eth.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_flash.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_flash_ex.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_flash_ramfunc.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_fmpi2c.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_fmpi2c_ex.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_gpio.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_hash.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_hash_ex.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_hcd.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_i2c.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_i2c_ex.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_i2s.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_i2s_ex.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_irda.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_iwdg.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_lptim.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_ltdc.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_ltdc_ex.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_nand.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_nor.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_pccard.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_pcd.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_pcd_ex.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_pwr.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_pwr_ex.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_qspi.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_rcc.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_rcc_ex.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_rng.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_rtc.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_rtc_ex.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_sai.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_sai_ex.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_sd.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_sdram.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_smartcard.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_spdifrx.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_spi.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_sram.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_tim.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_tim_ex.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_timebase_rtc_alarm_template.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_timebase_rtc_wakeup_template.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_timebase_tim_template.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_uart.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_usart.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_hal_wwdg.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_ll_fmc.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_ll_fsmc.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_ll_sdmmc.c"/>
+                    <F N="Src/stm32f4lib/Src/stm32f4xx_ll_usb.c"/>
+                </Folder>
+                <F N="Src/stm32f4lib/startup_stm32f407xx.s"/>
+                <F N="Src/stm32f4lib/startup_stm32f429xx.s"/>
+                <F N="Src/stm32f4lib/stm32f407xx.h"/>
+                <F N="Src/stm32f4lib/stm32f4xx.h"/>
+                <F N="Src/stm32f4lib/stm32f4xx_hal_conf.h"/>
+                <F N="Src/stm32f4lib/stm32f4xx_it.c"/>
+                <F N="Src/stm32f4lib/stm32f4xx_it.h"/>
+                <F N="Src/stm32f4lib/system_stm32f4xx.c"/>
+                <F N="Src/stm32f4lib/system_stm32f4xx.h"/>
+            </Folder>
+            <Folder Name="usbapp">
+                <F N="Src/usbapp/fatfs.c"/>
+                <F N="Src/usbapp/fatfs.h"/>
+                <F N="Src/usbapp/ffconf.h"/>
+                <F N="Src/usbapp/usb_host.c"/>
+                <F N="Src/usbapp/usb_host.h"/>
+                <F N="Src/usbapp/usbh_conf.c"/>
+                <F N="Src/usbapp/usbh_conf.h"/>
+            </Folder>
+            <Folder Name="usblib">
+                <Folder Name="Class">
+                    <Folder Name="HID">
+                        <Folder Name="Inc">
+                            <F N="Src/usblib/Class/HID/Inc/usbh_hid.h"/>
+                            <F N="Src/usblib/Class/HID/Inc/usbh_hid_keybd.h"/>
+                            <F N="Src/usblib/Class/HID/Inc/usbh_hid_mouse.h"/>
+                            <F N="Src/usblib/Class/HID/Inc/usbh_hid_parser.h"/>
+                            <F N="Src/usblib/Class/HID/Inc/usbh_hid_usage.h"/>
+                        </Folder>
+                        <Folder Name="Src">
+                            <F N="Src/usblib/Class/HID/Src/usbh_hid.c"/>
+                            <F N="Src/usblib/Class/HID/Src/usbh_hid_keybd.c"/>
+                            <F N="Src/usblib/Class/HID/Src/usbh_hid_mouse.c"/>
+                            <F N="Src/usblib/Class/HID/Src/usbh_hid_parser.c"/>
+                        </Folder>
+                    </Folder>
+                    <Folder Name="MSC">
+                        <Folder Name="Inc">
+                            <F N="Src/usblib/Class/MSC/Inc/usbh_msc.h"/>
+                            <F N="Src/usblib/Class/MSC/Inc/usbh_msc_bot.h"/>
+                            <F N="Src/usblib/Class/MSC/Inc/usbh_msc_scsi.h"/>
+                        </Folder>
+                        <Folder Name="Src">
+                            <F N="Src/usblib/Class/MSC/Src/usbh_msc.c"/>
+                            <F N="Src/usblib/Class/MSC/Src/usbh_msc_bot.c"/>
+                            <F N="Src/usblib/Class/MSC/Src/usbh_msc_scsi.c"/>
+                        </Folder>
+                    </Folder>
+                </Folder>
+                <Folder Name="Core">
+                    <Folder Name="Inc">
+                        <F N="Src/usblib/Core/Inc/usbh_core.h"/>
+                        <F N="Src/usblib/Core/Inc/usbh_ctlreq.h"/>
+                        <F N="Src/usblib/Core/Inc/usbh_def.h"/>
+                        <F N="Src/usblib/Core/Inc/usbh_ioreq.h"/>
+                        <F N="Src/usblib/Core/Inc/usbh_pipes.h"/>
+                    </Folder>
+                    <Folder Name="Src">
+                        <F N="Src/usblib/Core/Src/usbh_core.c"/>
+                        <F N="Src/usblib/Core/Src/usbh_ctlreq.c"/>
+                        <F N="Src/usblib/Core/Src/usbh_ioreq.c"/>
+                        <F N="Src/usblib/Core/Src/usbh_pipes.c"/>
+                    </Folder>
+                </Folder>
+            </Folder>
+            <F N="Src/project.code-workspace"/>
+        </Folder>
+    </Files>
+</Project>
